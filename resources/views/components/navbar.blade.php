@@ -12,6 +12,9 @@
       <a class="nav-link" href={{asset("FAQ")}}>FAQ</a>
     </li>
     <li class="nav-link">
+      <a class="nav-link" href={{asset("contact")}}>Contacto</a>
+    </li>
+    <li class="nav-link">
         <a class="nav-link" href={{asset("carrito")}}>Carrito<i class="fas fa-shopping-cart">({{ isset(session('carrito')['products']) ? count(session('carrito')['products']) : 0 }})</i></a>
       </li>
     @if(auth()->user())

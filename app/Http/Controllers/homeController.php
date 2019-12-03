@@ -17,7 +17,7 @@ class homeController extends Controller
     }
     public function contact()
     {
-        return view('formulario');
+        return view('contact');
     }
     public function store()
     {

@@ -57,7 +57,7 @@ Tintorería que incluye desmanchado, limpieza en seco, lavado y planchado..</p>
 las necesidad de disminuir los tiempos de entrega asegurando la calidad de servicio, utilizando solo productos de alta calidad,
 pensando siempre en el medio ambiente. Nuestro servicios personalizados permiten asegurar que puedas elegir el producto que mas 
 se adapte a  tus necesidades.</p>
-<div class="col-md-12 text-center"><a href="#ABOUT.php" class="btn btn-primary text-center">NOSOTROS</a></div>
+<div class="col-md-12 text-center"><a href="{{asset("FAQ")}}" class="btn btn-primary text-center">NOSOTROS</a></div>
 </article>
 </section>
 

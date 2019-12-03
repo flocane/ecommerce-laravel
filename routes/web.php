@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/home', 'homeController@index')->name('home');
 Route::get('/FAQ', 'homeController@about');
-Route::get('/formulario', 'homeController@contact');
+Route::get('/contact', 'homeController@contact');
 Route::post('/contact', 'homeController@store');
 Route::get('/perfil', 'homeController@perfil');
 Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('admin');

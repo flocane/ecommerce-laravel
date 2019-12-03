@@ -1,0 +1,89 @@
+.pivot{
+  height: 30%;
+}
+
+
+  /* class pnouel 0702019 */
+.landingSections{
+    margin-bottom: 5%;
+    border-top:2px solid #94d3f8;
+    border-bottom:2px solid #94d3f8;
+    background-image: url("../img/layout/BGLaundry.png") ;
+    background-repeat: none;  
+}
+​
+/* class pnouel imagenes de articles en sections 0702019 */
+  .imagesLanding{
+    max-height: 100%;
+    margin-left: 20%;
+  }
+/* tag.Class added pnouel 0702019 */
+  p.parrLanding{
+    text-justify: auto;
+    text-indent: 3em;
+    text-align: center;
+    margin-right: 5%;
+  }
+/* class pnouel  <h1> de landing 0702019 */
+  .headingLanding{
+    margin-left: 17%;
+    margin-top: 5%;
+  }
+​
+  #headingRegistro{
+    margin-left: 12%;
+    margin-top: 5%;
+  }
+​
+/* class pnouel 0702019 div espacio entre sections */
+.auxSpace{
+height: 60px;
+background-color: white;
+}
+
+/* id added pnouel 0702019 */
+#topAux{ 
+  height: 60px;
+}
+
+  /* class pnouel 0702019 */
+  .buttonsLanding{ 
+    text-align: center;
+  }
+​
+​
+.ServiceBannerArt{
+    text-align: center;
+    margin-top: 20%;
+  }
+.headingServiceBanner{
+  font-size: 2em;
+  margin-top: 0.5em;
+}
+​
+#footerBGcolor{
+background-color: #94d3f8;
+}
+
+.icono{
+  background-image: url(../img/layout/iron.png);
+    background-size: cover;
+}
+
+.bannerPrincipal{
+  width: 100%; 
+  display: flex;
+  padding: 10px;
+  text-align: center
+}
+
+.seccion1, .seccion2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+
+

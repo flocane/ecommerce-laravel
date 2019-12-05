@@ -23,6 +23,10 @@ class homeController extends Controller
     {
         return view('formulario');
     }
+    public function register()
+    {
+        return view('login');
+    }
     public function perfil()
     {
         $user = User::all();

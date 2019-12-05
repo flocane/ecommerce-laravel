@@ -38,7 +38,7 @@
       </li>
     @else
       <li class="nav-link">
-          <a id="login" class="nav-link" href="/login">Ingresar</a>
+          <a id="login" class="nav-link" href={{asset("login")}}>Ingresar</a>
       </li>
     @endif
     @if(!auth()->user())

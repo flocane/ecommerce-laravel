@@ -15,11 +15,11 @@
       <a class="nav-link" href={{asset("contact")}}>Contacto</a>
     </li>
     <li class="nav-link">
-        <a class="nav-link" href={{asset("carrito")}}>Carrito<i class="fas fa-shopping-cart">({{ isset(session('carrito')['products']) ? count(session('carrito')['products']) : 0 }})</i></a>
+        <a class="nav-link" href={{asset("carrito")}}>Carrito<i class="fas fa-shopping-cart"></i></a>
       </li>
     @if(auth()->user())
       <li class="nav-link">
-        <a class="nav-link" href="{{url("perfil/")}}">{{Auth::User()->name}}</a>
+        <a class="nav-link" href="{{url("perfil")}}">{{Auth::User()->name}}</a>
       </li>
     @endif
     @if(auth()->user() && auth()->user()->role === 9)
@@ -43,7 +43,7 @@
     @endif
     @if(!auth()->user())
     <li class="nav-link">
-    <a class="nav-link" href="/register">Registrarse</a>
+    <a class="nav-link" href={{asset("registro")}}>Registrarse</a>
     </li>
     @endif
     <form class="form-inline my-2 my-lg-0" action={{route('products.search')}} method="get">

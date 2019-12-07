@@ -6,6 +6,14 @@ use Illuminate\Http\Request;
 
 class homeController extends Controller
 {
+    public function carrito()
+    {
+        return view('carrito');
+    }
+    public function products()
+    {
+        return view('product');
+    }
     
     public function index()
     {
@@ -19,14 +27,17 @@ class homeController extends Controller
     {
         return view('contact');
     }
-    public function store()
-    {
-        return view('formulario');
-    }
+
     public function register()
+    {
+        return view('registro');
+    }
+
+    public function login()
     {
         return view('login');
     }
+
     public function perfil()
     {
         $user = User::all();

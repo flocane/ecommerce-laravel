@@ -38,12 +38,12 @@
       </li>
     @else
       <li class="nav-link">
-          <a id="login" class="nav-link" href='/login'>Ingresar</a>
+          <a id="login" class="nav-link" href='{{route('login')}}'>Ingresar</a>
       </li>
     @endif
     @if(!auth()->user())
     <li class="nav-link">
-    <a class="nav-link" href='/register'>Registrarse</a>
+    <a class="nav-link" href='{{ route('register') }}'>Registrarse</a>
     </li>
     @endif
     <form class="form-inline my-2 my-lg-0" action={{route('products.search')}} method="get">

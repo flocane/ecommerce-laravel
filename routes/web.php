@@ -24,7 +24,7 @@ Route::get('/contact', 'homeController@contact');
 Route::post('/contact', 'homeController@store');
 Route::get('/perfil', 'homeController@perfil');
 Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('admin');
-Route::get('/login', 'homeController@login');
+//Route::get('/login', 'homeController@login');
 Route::get('/carrito', 'homeController@carrito');
 Route::get('/registro', 'homeController@register');
 Route::get('/product', 'homeController@product');

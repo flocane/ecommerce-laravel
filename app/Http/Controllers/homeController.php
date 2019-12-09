@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class homeController extends Controller
 {
     public function carrito()
@@ -27,17 +24,14 @@ class homeController extends Controller
     {
         return view('contact');
     }
-
     public function register()
     {
-        return view('registro');
+        return view('register');
     }
-
     public function login()
     {
         return view('login');
     }
-
     public function perfil()
     {
         $user = User::all();

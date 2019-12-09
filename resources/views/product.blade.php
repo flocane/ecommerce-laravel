@@ -1,10 +1,3 @@
-<?php
-    require_once("controllers/loader.php");
-
-    
-        $productos = $query->getProducts();
-    
-?>
 @extends('layouts.master');
 @section('content')  
 
@@ -20,7 +13,7 @@
     <div class="container">
     <div class="row "> 
 
-        <?php foreach ($productos as $key => $producto) :?>
+        <?php foreach ($products as $key => $producto) :?>
             <div class="col-md-4 col-sm-6 mt-5 mb-5">  
                 <div class="cajaFoto">    
                     <img class="fotoProducto" src="<?=$producto['imagen'];?>" alt="">      

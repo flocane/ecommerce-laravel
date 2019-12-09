@@ -84,7 +84,7 @@ class productController extends Controller
      */
     public function edit($id)
     {
-        // dd('hola');
+        // dd('entre como un campeon');
         $category = Category::all();
         $product = Product::find($id);
      

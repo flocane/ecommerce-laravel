@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+Auth::routes();
 // HOME
 
 Route::get('/home', 'homeController@index')->name('home');
@@ -25,7 +26,7 @@ Route::get('/perfil', 'homeController@perfil');
 Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('admin');
 Route::get('/login', 'homeController@login');
 Route::get('/carrito', 'homeController@carrito');
-Route::get('/registro', 'homeController@registro');
+Route::get('/registro', 'homeController@register');
 Route::get('/product', 'homeController@product');
 
 // PRODUCTOS
@@ -43,3 +44,9 @@ Route::get('/users/show/{id}', 'UsersController@show')->name('users.show');
 Route::get('/users/{id}/update', 'UserController@edit')->name('users.edit');
 Route::patch('/users/{id}/update', 'UserController@update');
 Route::delete('users/{id}', 'UserController@destroy')->name('users.detroy');
+
+
+
+
+
+

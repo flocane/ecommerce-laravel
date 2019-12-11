@@ -29,7 +29,7 @@
 </div>
 </nav> --}}
 
-<nav class="navbar navbar-expand-lg ml-4 sticky-top  navbar-light  border border-white " style="background-color: #FF910C" >
+<nav class="navbar navbar-expand-lg ml-4 sticky-top  navbar-light  border border-white " style="background-color: #F99578" >
         <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
             <ul class="navbar-nav ml-auto text-center " style="font-color:white">
                 <li class="nav-item active ">

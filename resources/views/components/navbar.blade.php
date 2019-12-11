@@ -46,10 +46,10 @@
     <a class="nav-link" href='{{ route('register') }}'>Registrarse</a>
     </li>
     @endif
-    <form class="form-inline my-2 my-lg-0" action={{route('products.search')}} method="get">
+    {{-- <form class="form-inline my-2 my-lg-0" action={{route('products.search')}} method="get">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
         <button type="submit" name="search-submit" class="btn btn-secondary my-2 my-sm-0">Buscar</button>
-    </form>
+    </form> --}}
     </div>
   </ul>
 </div>

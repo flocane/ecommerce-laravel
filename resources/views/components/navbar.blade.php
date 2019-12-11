@@ -1,35 +1,4 @@
-{{-- <nav class="navbar navbar-expand-lg navbar-light ml-4  border-bottom border-secondary">
-    <a class="navbar-brand" href="/home"><img src="img/layout/LogoG.jpg" width="249" height="123"></a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-  <ul class="navbar-nav">
-    <li class="nav-link">
-      <a class="nav-link" href={{asset("home")}}>Home</a>
-    </li>
-
-    <li class="nav-link">
-      <a class="nav-link" href={{asset("FAQ")}}>FAQ</a>
-    </li>
-    <li class="nav-link">
-      <a class="nav-link" href={{asset("contact")}}>Contacto</a>
-    </li>
-    <li class="nav-link">
-        <a class="nav-link" href={{asset("carrito")}}>Carrito<i class="fas fa-shopping-cart"></i></a>
-      </li>
-      --}}
-
-    {{-- <form class="form-inline my-2 my-lg-0" action={{route('products.search')}} method="get">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button type="submit" name="search-submit" class="btn btn-secondary my-2 my-sm-0">Buscar</button>
-    </form> --
-    </div>
-  </ul>
-</div>
-</nav> --}}
-
-<nav class="navbar navbar-expand-lg ml-4 sticky-top  navbar-light  border border-white " style="background-color: #F99578" >
+<nav class="navbar navbar-expand-lg ml-4 sticky-top  navbar-light  border border-white mt-4 " style="background-color: #F99578" >
         <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
             <ul class="navbar-nav ml-auto text-center " style="font-color:white">
                 <li class="nav-item active ">

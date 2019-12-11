@@ -24,12 +24,13 @@
     z-index: 15;
     position: relative;
     background: #fff;
-    width: 600px;
-    height: 560px;
-    border-radius: 4px;
+    width: 550px;
+    height: 660px;
+    border-radius: 1px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .1);
     box-sizing: border-box;
-    margin: 100px auto 10px;
+    margin: 50px auto 10px;
+    margin-bottom: 50px;
     overflow: hidden;
 }
 .gssform-toggle {
@@ -149,7 +150,7 @@
     color:rgb(249, 149, 120);
     font-size: 12px;
     text-decoration: none;
-    margin-left: 240px;
+    margin-left: 170px;
 }
 .gssform-panel {
     padding: 60px calc(5% + 60px) 60px 60px;
@@ -197,7 +198,7 @@
     left: 93%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.gssform-panel.two:hover:before, .form-panel.two:hover:after {
+.gssform-panel.two:hover:before, .gssform-panel.two:hover:after {
     opacity: 0;
 }
 .gssform-panel.two.active {

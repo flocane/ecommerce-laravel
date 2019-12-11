@@ -1,6 +1,8 @@
 @extends('layouts.master');
 @section('content')  
 
+<!-- EL REGISTER ESTA RESUELTO EN EL LOG IN-->
+
   <div class="container-fluid px-0">
     <?php include_once 'Components/navbar.php' ?>
     <br>
@@ -71,5 +73,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
   @endsection

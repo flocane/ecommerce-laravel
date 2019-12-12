@@ -28,7 +28,12 @@
   }
 
   .foot a{
-    color: white;
+    color: #F99578;
     text-decoration: none;
+
+  }
+  .footLayout{
+    height: 200px;
+    background-color: rgba(182, 179, 178, 0.3);
 
   }

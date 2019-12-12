@@ -25,12 +25,14 @@ Route::post('/contact', 'homeController@store');
 Route::get('/perfil', 'homeController@perfil');
 Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('admin');
 //Route::get('/login', 'homeController@login');
-Route::get('/carrito', 'homeController@carrito');
 Route::get('/registro', 'homeController@register');
-Route::get('/product', 'homeController@product');
 
 // PRODUCTOS
-Route::get('/products', 'ProductController@index')->name('products');
+Route::get('/cart', 'ProductController@cart');
+Route::get('/add-to-cart/{id}', 'ProductController@addToCart');
+Route::get('/deleteCart/{id}', 'ProductController@deleteCart');
+Route::get('/product', 'ProductController@index')->name('products');
+Route::get('product-detail/{id}', 'ProductController@detail');
 Route::get('/products/create', 'ProductController@create')->name('products.create');
 Route::post('/products/create', 'ProductController@store');
 Route::get('/products/show','ProductController@show'); 
@@ -44,7 +46,6 @@ Route::get('/users/show/{id}', 'UsersController@show')->name('users.show');
 Route::get('/users/{id}/update', 'UserController@edit')->name('users.edit');
 Route::patch('/users/{id}/update', 'UserController@update');
 Route::delete('users/{id}', 'UserController@destroy')->name('users.detroy');
-
 
 
 

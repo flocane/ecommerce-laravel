@@ -1,0 +1,32 @@
+.tituloy{
+    color:rgba(0,0,0,.5);
+}
+
+.theady{
+    background-color:rgb(249, 149, 120) ;
+    color:rgba(0,0,0,.5);
+}
+.badge{
+    background-color: rgb(249, 149, 120);
+    color:rgba(0,0,0,.5);
+    font-size: large;
+}
+
+.border-left-y{
+   border-top: groove !important;
+   border-left: groove;
+   border-bottom: groove;
+   background-color: rgb(249, 149, 120) ;
+}
+
+.border-right-y{
+    border-top: groove !important;
+    border-right: groove;
+    border-bottom: groove;
+    background-color: rgb(249, 149, 120);
+}
+
+.Mensajey{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+}

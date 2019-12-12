@@ -3,14 +3,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 class homeController extends Controller
 {
-    public function carrito()
-    {
-        return view('carrito');
-    }
-    public function products()
-    {
-        return view('product');
-    }
     
     public function index()
     {

@@ -2,155 +2,60 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class productController extends Controller
 {
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-       $limit=30;
-       $product = Product::make()->paginate($limit);
-       $category = Category::all();
-       return view('products.index')->with('products', $product)
-                                    ->with('categories',$category);
+    public function index(){
+        $products = Product::all();
+        return view('products.product')->with("productos", $products);
+    } 
+
+    public function detail($id){
+        $product= Product::find($id);
+        return view('products.detailProduct')->with('product', $product);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-       $category = Category::all();
-       return view('products.create')->with('categories', $category);
+    public function cart(){
+        $cart = session()->get('cart');
+        return view('cart')->with('cart', $cart);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $reglas = [
-            'name' => 'required',
-            'description' => 'required',
-            'category_id' => 'required',
-            'stock_id' => 'required',
-            'price' => 'required',
-        ];
- 
-        $mensajes = [
-            'required' => 'el campo :attribute es obligatorio'
-        ];
-        $this->validate($request, $reglas, $mensajes);
+    public function addToCart($id){
+        $product =Product::find($id);
+        $cart = session()->get('cart');
 
- 
-        $photopath_product = $request->file('picture')->store('product_img', 'public');
- 
-        $product = new Product($request->all());
- 
-        $product->picture = $photopath_product;
- 
-        $product->save();
- 
-        return redirect('/perfilAdm');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
-    {
-        $product = Product::all();
-       return view('products.show')->with('products', $product);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        // dd('entre como un campeon');
-        $category = Category::all();
-        $product = Product::find($id);
-     
-
-       return view('products.edit')
-           ->with('product', $product)
-           ->with('categories', $category);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request,$id)
-    {
-        $rules = [
-            'name' => 'required',
-            'description' => 'required',
-            'category_id' => 'required',
-            'stock_id' => 'required',
-            'price' => 'required',
-        ];
+        if(!$cart){
+            //si el carrito está vacío, este es el primer producto
+            $cart=[
+                $id => [
+                    "product" => $product,
+                    "quantity" => 1
+                ]
+            ];
+       
+        } elseif (isset($cart[$id])) {
+            //si el carrito no está vacío, verifica si este producto existe y luego incremente cuantitativamente
+            $cart[$id]['quantity']++;
         
-        $messages = [
-            'required' => 'el campo :attribute es obligatorio',
-        ];
- 
-        $this->validate($request, $rules, $messages);
+        } else {
+            //Si el artículo no existe en el carrito, agréguelo al carrito con cantidad = 1
+            $cart[$id]= [
+                    "product"=>$product,
+                    "quantity"=> 1
+            ];
+        }
         
-        $product = Product::find($id);
-        
-         $product->name = $request->input('name') !== $product->name ? $request->input('name') : $product->name;
-         
-         $product->description = $request->input('description') !== $product->description ? $request->input('description') : $product->description;
-         $product->category_id = $request->input('category_id') !== $product->category_id ? $request->input('category_id') : $product->category_id;
-         $product->stock_id = $request->input('stock_id') !== $product->stock_id ? $request->input('stock_id') : $product->stock_id;
-         $product->price = $request->input('price') !== $product->price ? $request->input('price') : $product->price;
-         if($request->input('picture') !== $product->picture){
-             $photopath_product = $request->file('picture')->store('product_img', 'public');
-         }
-         $product->picture = $request->input('picture') !== $product->picture ? $photopath_product : $product->picture;
-  
-         $product->save();
-     
-         return redirect("/perfilAdm/");
+        session()->put('cart', $cart);
+        return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {   
-        $product = Product::find($id);
-        $product->delete();
-        return redirect("/perfilAdm/");
+    //Eliminar productos de carrito
+    public function deleteCart($id){
+        $cart = session()->get('cart');
+        unset($cart[$id]);
+        session()->put('cart', $cart);
+        return redirect()->back()->with('cart', $cart);
     }
-    public function search(Request $request)
-    {
-        $input = $request->input('busqueda');
-        $products = Product::where('name','LIKE','%'.$input.'%')->paginate(8);
-        return view('products.index')->with("products", $products);
-    }
-}
+};

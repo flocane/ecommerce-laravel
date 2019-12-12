@@ -43,18 +43,17 @@
     
 .bajada{
     color:rgba(1, 0, 2, 0.87);
-    font-size: 13px;
+    font-weight: bolder;
 }   
 
 .cajaFoto{
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
+    height: 200px;
+    width: 140px;
 }
 
 .fotoProducto{
-    background-size: cover;
-    background-position: center;
+   height: 200px;
+   width: 200px;
 }
 
 .flex-container {
@@ -75,6 +74,7 @@
     border-bottom: 1px solid #ccc;
     margin: 0 0 10px 0;
     padding: 10px;
+    font-weight: bolder;
   }
  
   .botonSubmit {
@@ -119,3 +119,8 @@
     display: flex;
     padding: 10px;
 }
+
+.tituloy{
+    color:rgba(0,0,0,.5);
+}
+

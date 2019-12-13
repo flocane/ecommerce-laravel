@@ -15,7 +15,7 @@
 
         @foreach ($productos as $product)
             <div class="col-lg-4 col-md-6 mt-2 mb-4">  
-                <div class="cajaFoto">    
+                <div class="container">    
                     <img class="fotoProducto" src="{{$product->imagen}}" alt="">      
                 </div>
                 <h4 class="nombreProd">{{$product->nombre}}</h4>

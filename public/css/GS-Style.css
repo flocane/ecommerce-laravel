@@ -46,10 +46,6 @@
     font-weight: bolder;
 }   
 
-.cajaFoto{
-    height: 200px;
-    width: 140px;
-}
 
 .fotoProducto{
    height: 200px;
@@ -124,3 +120,7 @@
     color:rgba(0,0,0,.5);
 }
 
+.detail-tituloy{
+    color:rgba(0,0,0,.5);
+    font-weight: bolder;
+}

@@ -1,13 +1,15 @@
--- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `lavadero` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `lavadero`;
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: lavadero
 -- ------------------------------------------------------
--- Server version	8.0.18
+-- Server version	5.5.5-10.3.16-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,13 +23,13 @@
 
 DROP TABLE IF EXISTS `carritos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carritos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `compra_id` int(11) DEFAULT NULL,
   `precio_final` float DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `compra_id` (`compra_id`),
   CONSTRAINT `carritos_ibfk_1` FOREIGN KEY (`compra_id`) REFERENCES `compras` (`id`)
@@ -49,17 +51,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `compras`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `compras` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario_id` int(11) DEFAULT NULL,
   `carrito_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `carrito_id` (`carrito_id`),
-  CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`),
+  CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`),
   CONSTRAINT `compras_ibfk_2` FOREIGN KEY (`carrito_id`) REFERENCES `carritos` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -74,96 +76,96 @@ LOCK TABLES `compras` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `productos`
+-- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS `productos`;
+DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `productos` (
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `imagen` varchar(100) DEFAULT NULL,
-  `nombre` varchar(50) DEFAULT NULL,
-  `descripcion` varchar(500) DEFAULT NULL,
+  `imagen` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nombre` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `descripcion` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `precio` float DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `productos`
+-- Dumping data for table `products`
 --
 
-LOCK TABLES `productos` WRITE;
-/*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'img/bolsaMediana.jpg','Lavanderia Small','bolsa pequeña',236,'2019-11-15 03:07:38','2019-11-15 03:07:38'),(2,'img/bolsaMediana.jpg','Lavanderia Medium','bolsa mediana',325,'2019-11-15 03:23:10','2019-11-15 03:23:10'),(3,'img/bolsaMediana.jpg','Lavanderia Large','bolsa grande',420,'2019-11-15 03:24:05','2019-11-15 03:24:05'),(4,'img/camisas.jpg','Lavanderia Large','bolsa grande',123.5,'2019-11-15 14:14:38','2019-11-15 14:14:38'),(5,'img/sacos.jpg','Lavanderia Large','bolsa grande',380,'2019-11-15 14:14:38','2019-11-15 14:14:38'),(6,'img/Pantalones.jpg','Lavanderia Large','bolsa grande',98.5,'2019-11-15 14:14:38','2019-11-15 14:14:38'),(7,'img/toallas.jpg','Lavanderia Large','bolsa grande',53.9,'2019-11-15 14:14:38','2019-11-15 14:14:38'),(8,'img/RopaBebe.jpg','Lavanderia Large','bolsa grande',254,'2019-11-15 14:14:38','2019-11-15 14:14:38'),(9,'img/acolchados.jpg','Lavanderia Large','bolsa grande',478,'2019-11-15 14:14:39','2019-11-15 14:14:39');
-/*!40000 ALTER TABLE `productos` ENABLE KEYS */;
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'img/bolsaMediana.jpg','Lavanderia Small','bolsa pequeña',236,'2019-11-15 03:07:38','2019-11-15 03:07:38'),(2,'img/bolsaMediana.jpg','Lavanderia Medium','bolsa mediana',325,'2019-11-15 03:23:10','2019-11-15 03:23:10'),(3,'img/bolsaMediana.jpg','Lavanderia Large','bolsa grande',420,'2019-11-15 03:24:05','2019-11-15 03:24:05'),(4,'img/camisas.jpg','Lavanderia Large','bolsa grande',123.5,'2019-11-15 14:14:38','2019-11-15 14:14:38'),(5,'img/sacos.jpg','Lavanderia Large','bolsa grande',380,'2019-11-15 14:14:38','2019-11-15 14:14:38'),(6,'img/Pantalones.jpg','Lavanderia Large','bolsa grande',98.5,'2019-11-15 14:14:38','2019-11-15 14:14:38'),(7,'img/toallas.jpg','Lavanderia Large','bolsa grande',53.9,'2019-11-15 14:14:38','2019-11-15 14:14:38'),(8,'img/RopaBebe.jpg','Lavanderia Large','bolsa grande',254,'2019-11-15 14:14:38','2019-11-15 14:14:38'),(9,'img/acolchados.jpg','Lavanderia Large','bolsa grande',478,'2019-11-15 14:14:39','2019-11-15 14:14:39');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `productos_carritos`
+-- Table structure for table `products_cart`
 --
 
-DROP TABLE IF EXISTS `productos_carritos`;
+DROP TABLE IF EXISTS `products_cart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `productos_carritos` (
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products_cart` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `precio_final` float DEFAULT NULL,
   `producto_id` int(11) DEFAULT NULL,
   `carrito_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `producto_id` (`producto_id`),
   KEY `carrito_id` (`carrito_id`),
-  CONSTRAINT `productos_carritos_ibfk_1` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`),
-  CONSTRAINT `productos_carritos_ibfk_2` FOREIGN KEY (`carrito_id`) REFERENCES `carritos` (`id`)
+  CONSTRAINT `products_cart_ibfk_1` FOREIGN KEY (`producto_id`) REFERENCES `products` (`id`),
+  CONSTRAINT `products_cart_ibfk_2` FOREIGN KEY (`carrito_id`) REFERENCES `carritos` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `productos_carritos`
+-- Dumping data for table `products_cart`
 --
 
-LOCK TABLES `productos_carritos` WRITE;
-/*!40000 ALTER TABLE `productos_carritos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `productos_carritos` ENABLE KEYS */;
+LOCK TABLES `products_cart` WRITE;
+/*!40000 ALTER TABLE `products_cart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `products_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `usuarios`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `usuarios` (
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `nickname` varchar(50) DEFAULT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` text,
-  `avatar` text,
-  `rol` varchar(50) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nickname` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `avatar` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rol` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuarios`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `usuarios` WRITE;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Yohana','Orona','Yoha','yohana@gmail.com','123456',NULL,NULL,'2019-11-13 18:36:58','2019-11-13 18:36:58'),(4,'Carla','Baracus','cbaracus','cbaracus@queti.com','$2y$10$Zt4Vkwgmcn6u/tltAamjhepvwPRB8uIwf/Tl7P8Xa74yVVq/TsJqu',NULL,NULL,'2019-11-15 02:33:02','2019-11-15 02:33:02'),(5,'Maria','Mora','Mari','maria@gmai.com','$2y$10$ICDGip6FFa1bl1QUgf7zD.D2TtFKUOIJn5PLo96CgDNUdj1F54VDq',NULL,NULL,'2019-11-15 18:28:55','2019-11-15 18:28:55');
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Yohana','Orona','Yoha','yohana@gmail.com','123456',NULL,NULL,'2019-11-13 18:36:58','2019-11-13 18:36:58'),(4,'Carla','Baracus','cbaracus','cbaracus@queti.com','$2y$10$Zt4Vkwgmcn6u/tltAamjhepvwPRB8uIwf/Tl7P8Xa74yVVq/TsJqu',NULL,NULL,'2019-11-15 02:33:02','2019-11-15 02:33:02'),(5,'Maria','Mora','Mari','maria@gmai.com','$2y$10$ICDGip6FFa1bl1QUgf7zD.D2TtFKUOIJn5PLo96CgDNUdj1F54VDq',NULL,NULL,'2019-11-15 18:28:55','2019-11-15 18:28:55'),(6,'fran',NULL,NULL,'locane.francisco@gmail.com','$2y$10$CrzDeN7JyqqrUd/dNHSlMu0vhBKyIiNJPGKmBr/72thjal3n9tGw6',NULL,'9','2019-12-10 01:36:07','2019-12-10 01:36:07');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -175,4 +177,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-15 20:39:43
+-- Dump completed on 2019-12-11 18:56:56

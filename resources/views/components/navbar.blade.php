@@ -48,7 +48,7 @@
                     </li>
                   @else
                     <li class="nav-link ">
-                        <a id="login" class="nav-link text-white-50 font-weight-bold" href='{{route('login')}}'>Ingresar</a>
+                        <a id="login" class="nav-link text-white-50 font-weight-bold" href="{{route('login')}}">Ingresar</a>
                     </li>
                   @endif
                   @if(!auth()->user())

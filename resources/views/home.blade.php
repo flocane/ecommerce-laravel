@@ -37,7 +37,7 @@
 Lavandería que incluye lavado en agua, secado en secarropas y doblado.
 Plancha que incluye lavado en agua, secado en secarropas y planchado.
 Tintorería que incluye desmanchado, limpieza en seco, lavado y planchado.</p>
-<div class="col-6 text-center" ><a href=productos.php><button type="button" class="btn btn-primary btn-md buttonsLanding" >NUESTROS PRODUCTOS</button></a></div>
+<div class="col-6 text-center" ><a href={{asset("product")}}><button type="button" class="btn btn-primary btn-md buttonsLanding" >NUESTROS PRODUCTOS</button></a></div>
 </article>
 
 </section>
@@ -49,7 +49,7 @@ Tintorería que incluye desmanchado, limpieza en seco, lavado y planchado.</p>
 Lavandería que incluye lavado en agua, secado en secarropas y doblado.
 Plancha que incluye lavado en agua, secado en secarropas y planchado.
 Tintorería que incluye desmanchado, limpieza en seco, lavado y planchado..</p>
-<div class="col-6 text-center" ><a href='\register'> <button type="button" class="btn btn-primary btn-md buttonsLanding" >REGISTRATE</button></a></div>
+<div class="col-6 text-center" ><a href="{{ route('register') }}"> <button type="button" class="btn btn-primary btn-md buttonsLanding" >REGISTRATE</button></a></div>
 </article>
 </section>
 

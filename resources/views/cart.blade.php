@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="container m-5">
+<div class="container mt-5 mb-1">
     <h2 class="tituloy pb-5"><strong> Carrito de compras </strong></i></h2>
 
     <div class="row justify-content-center">
@@ -74,5 +74,8 @@
             @endif
         </div>
     </div>
+</div>
+<div>
+   <a href="{{ url('checkout/')}}"><button type="button" class="btn btn-outline-success mb-5">Elegir medio de pago</button></a>
 </div>
 @endsection

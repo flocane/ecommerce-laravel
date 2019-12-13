@@ -8,5 +8,5 @@ class Product extends Model
 {
     protected $guarded =[];
 
-    protected $table="productos";
+    protected $table="products";
 }

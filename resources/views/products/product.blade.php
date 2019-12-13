@@ -6,7 +6,7 @@
  <main>
     <section >
         <div class="carrito"><a href="carrito.php"> </a></div>
-        <h2 class="tituloy pb-5 pt-5"><strong>Realiza tu pedido </strong></h2>
+        <h2 class="titulosgenerales pb-5 pt-5" id="titulo faq"><strong>Realiza tu pedido </strong></h2>
         <p class="tituloy "> <strong>Descubrí nuestros servicios de lavandería, planchado, lavado en seco para tus prendas más delicadas o la ropa de hogar.</strong></p>
     </section>
 

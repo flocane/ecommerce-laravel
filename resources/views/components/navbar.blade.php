@@ -17,7 +17,7 @@
             </ul>
         </div>
         <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-            <a class="mx-auto" href="#">
+            <a class="mx-auto" href={{asset("home")}}>
                 <img src="img/layout/ironLogo.png"  class="rounded-circle"  width="140" height="140" >
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">

@@ -7,7 +7,7 @@
     cursor: pointer;
   }
   .iconos i{
-    font-size: 25px;
+    font-size: 60px;
   margin-left: 5px;
   transition: color 0.4s ease;
   }
@@ -37,3 +37,16 @@
     background-color: rgba(182, 179, 178, 0.3);
 
   }
+.map{
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+.google-maps iframe {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 75% !important;
+        height: 75% !important;
+    }

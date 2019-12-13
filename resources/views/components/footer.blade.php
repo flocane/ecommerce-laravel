@@ -4,9 +4,9 @@
         <h4 class="footFont"><strong>Informacion de interes</strong></h4>
         <div>
           <ul style="list-style:none" class="footFont">
-            <li ><a class ="nav-link text-left" href="#">Sobre Nosotros</a></li>
-            <li><a class ="nav-link text-left" href="#">Preguntas Frecuentes</a> </li>
-            <li><a class ="nav-link text-left"  href="#">Contactanos</a></li>
+            <li ><a class ="nav-link text-left ml-5" href="{{ route('register') }}">Registrate</a></li>
+            <li><a class ="nav-link text-left ml-5" href="{{asset("FAQ")}}">Preguntas Frecuentes</a> </li>
+            <li><a class ="nav-link text-left ml-5 "  href="{{asset("contact")}}"></a>Contacto</li>
           </ul>
         </div>
 

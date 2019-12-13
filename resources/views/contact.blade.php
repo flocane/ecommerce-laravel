@@ -35,7 +35,7 @@
         <div class="form-group  mt-4 col-sm-12 col-md-8 col-lg-8"><!-- Contacto-->
             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"><strong>Contacto</strong></i>
             </span>
-        <div class=" mt-4 col-sm-12 col-md-8 col-lg-8"> <!-- Ingresar la Consulta-->
+        <div class=" mt-4 col-sm-12 col-md-12 col-lg-12"> <!-- Ingresar la Consulta-->
             <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Ingrese la consulta." rows="7"></textarea>
         </div>
         <div class=" form-group mt-4 col-sm-12 col-md-8 col-lg-8"> <!-- Boton de Enviar-->

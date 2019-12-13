@@ -4,10 +4,11 @@
         <div class="bar">
             <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
         </div>
+        <section class="row mt-5" id="titulo  faq col-md-12 col-sm-12 col-lg-8 ">
+    <p class="titulosgenerales" > <strong>Formulario de Contacto</strong></p>
+</section>
 <form class="form-horizontal" action="" method="POST">
     <fieldset>
-      
-        <legend class="text-center header titulosgenerales ">Formulario de Contacto</legend>
         <div class="form-group mt-4 col-sm-12 col-md-8 col-lg-8"> <!-- Nombre -->
         <label for="full_name_id" class="control-label"><strong>Nombre</strong></label>
         <input type="text" class="form-control" id="Nombre" name="nombre" placeholder="Ingresar Nombre">

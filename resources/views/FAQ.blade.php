@@ -1,6 +1,6 @@
 @extends('layouts.master');
 @section('content')
-<section id="titulo  faq col-md-12 col-sm-12 col-lg-8 ">
+<section class="row mt-5" id="titulo  faq col-md-12 col-sm-12 col-lg-8 ">
     <p class="titulosgenerales" > <strong> Preguntas Frecuentes</strong></p>
 </section>
  

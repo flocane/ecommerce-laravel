@@ -1,7 +1,6 @@
 @extends('layouts.master');
 @section('content')
 <div class="formulario col-6">
-        <h1>&bull; FORMULARIO DE CONTACTO &bull;</h1>
         <div class="bar">
             <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
         </div>

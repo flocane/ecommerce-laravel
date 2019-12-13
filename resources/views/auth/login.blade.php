@@ -73,7 +73,7 @@
 @endsection
 
 
-{{-- <div class="gssbody" id="gss_form_gral">
+<!-- <div class="gssbody" id="gss_form_gral">
     <div class="gssform">
       <div class="gssform-toggle"></div>
       <div class="gssform-panel one">
@@ -126,4 +126,4 @@
 </div>
 </div>
 
-  </div> --}}
+  </div> -->

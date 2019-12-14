@@ -57,7 +57,7 @@
                   </li>
                   @endif
                   <li class="nav-link">
-                        <a class="nav-link text-white-50 font-weight-bold" href={{asset("carrito")}}>Carrito<i class="fas fa-shopping-cart"></i></a>
+                        <a class="nav-link text-white-50 font-weight-bold" href={{asset("cart")}}>Carrito<i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
         </div>

@@ -21,6 +21,7 @@ Auth::routes();
 Route::get('/home', 'homeController@index')->name('home');
 Route::get('/FAQ', 'homeController@about');
 Route::get('/contact', 'ContactFormControler@create');
+Route::post('/contact', 'ContactFormControler@store');
 //
 //Route::post('/contact', 'homeController@store');
 Route::get('/perfil', 'homeController@perfil');

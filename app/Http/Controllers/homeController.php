@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 class homeController extends Controller
 {
-    
+
     public function index()
     {
         return view('home');
@@ -14,7 +14,7 @@ class homeController extends Controller
     }
     public function contact()
     {
-        return view('contact');
+        return view('/contact/create');
     }
     public function register()
     {
@@ -38,6 +38,6 @@ class homeController extends Controller
         $categories = Category::all();
         return view('perfilAdm')->with('users', $users)
                                 ->with('products',$product);
-                                
+
     }
 }

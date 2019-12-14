@@ -20,8 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'homeController@index')->name('home');
 Route::get('/FAQ', 'homeController@about');
-Route::get('/contact', 'homeController@contact');
-Route::post('/contact', 'homeController@store');
+Route::get('/contact', 'ContactFormControler@create');
+//
+//Route::post('/contact', 'homeController@store');
 Route::get('/perfil', 'homeController@perfil');
 Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('admin');
 //Route::get('/login', 'homeController@login');
@@ -33,7 +34,7 @@ Route::get('/product', 'ProductController@index')->name('products');
 Route::get('product-detail/{id}', 'ProductController@detail');
 Route::get('/products/create', 'ProductController@create')->name('products.create');
 Route::post('/products/create', 'ProductController@store');
-Route::get('/products/show','ProductController@show'); 
+Route::get('/products/show','ProductController@show');
 Route::get('/products/{id}/update','ProductController@edit')->name('products.edit')->middleware('admin');
 Route::patch('/products/{id}/update', 'ProductController@update')->name('products.update');
 Route::delete('/products/{id}/', 'ProductController@destroy')->name('products.destroy');
@@ -44,7 +45,7 @@ Route::get('/cart', 'CartController@cart');
 Route::get('/add-to-cart/{id}', 'CartController@addToCart');
 Route::get('/deleteCart/{id}', 'CartController@deleteCart');
 Route::get('/checkout', 'CartController@checkout');
-// USERS 
+// USERS
 Route::get('/users/index', 'UsersController@index')->name('users.index');
 Route::get('/users/show/{id}', 'UsersController@show')->name('users.show');
 Route::get('/users/{id}/update', 'UserController@edit')->name('users.edit');

@@ -71,11 +71,13 @@
                 </tr>
             </table>
 
+            <div>
+                <a href="{{ url('checkout/')}}"><button type="button" class="btn btn-outline-success mb-5">Elegir medio de pago</button></a>
+            </div>
             @endif
         </div>
     </div>
 </div>
-<div>
-   <a href="{{ url('checkout/')}}"><button type="button" class="btn btn-outline-success mb-5">Elegir medio de pago</button></a>
-</div>
+
+
 @endsection

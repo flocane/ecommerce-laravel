@@ -21,7 +21,7 @@ class ContactFormControler extends Controller
            'mensaje' =>'required'
 
        ]);
-       Mail::to('dhlavaderolavabien@gmail.com')->send(new ContactformMail());
+       Mail::to('dhlavaderolavabien@gmail.com')->send(new ContactformMail($data));
 
    }
 }

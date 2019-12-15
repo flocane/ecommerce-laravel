@@ -12,15 +12,16 @@ class ContactformMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    //Acceso a datos de mail
+    public  $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct($data){
+         $this->data = $data;
+           }
 
     /**
      * Build the message.

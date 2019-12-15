@@ -24,11 +24,11 @@ class CartController extends Controller
                     "quantity" => 1
                 ]
             ];
-       
+
         } elseif (isset($cart[$id])) {
             //si el carrito no está vacío, verifica si este producto existe y luego incremente cuantitativamente
             $cart[$id]['quantity']++;
-        
+
         } else {
             //Si el artículo no existe en el carrito, agréguelo al carrito con cantidad = 1
             $cart[$id]= [
@@ -36,7 +36,7 @@ class CartController extends Controller
                     "quantity"=> 1
             ];
         }
-        
+
         session()->put('cart', $cart);
         return redirect()->back();
     }

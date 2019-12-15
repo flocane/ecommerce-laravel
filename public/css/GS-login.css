@@ -29,7 +29,7 @@
     border-radius: 1px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .1);
     box-sizing: border-box;
-    margin: 150px auto 10px;
+    margin: 100px auto 10px;
     margin-bottom: 50px;
     overflow: hidden;
 }
@@ -181,6 +181,7 @@
     transition: 0.3s ease;
     cursor: pointer;
 }
+
 .gssform-panel.two:before, .gssform-panel.two:after {
     content: '';
     display: block;

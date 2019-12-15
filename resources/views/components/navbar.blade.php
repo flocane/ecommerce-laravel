@@ -1,17 +1,18 @@
-<nav class="navbar navbar-expand-lg ml-4 sticky-top  navbar-light  border border-white mt-4 " style="background-color: #F99578" >
+<nav class="navbar navbar-expand-lg  sticky-top  navbar-light  border border-white mt-4 ml-4 mr-4" style="background-color: #F99578" >
         <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
-            <ul class="navbar-nav ml-auto text-center " style="font-color:white">
-                <li class="nav-item active ">
-                        <a class="nav-link text-white-50 font-weight-bold" href={{asset("home")}}>Home</a>
+            <ul class="navbar-nav ml-auto " style="font-color:white">
+                <li class="nav-item active ml-5">
+                        <h4><a class="nav-link  text-white-50 font-weight-bold" href={{asset("home")}}>Home</a></h4>
                 </li>
-                <li class="nav-item active">
+                 {{-- se sacan estos links quedan en Footer --}}
+                {{-- <li class="nav-item active">
                         <a class="nav-link text-white-50 font-weight-bold" href={{asset("FAQ")}}>FAQ</a>
                 </li>
                 <li class="nav-item active">
                         <a class="nav-link text-white-50 font-weight-bold" href={{asset("contact")}}>Contacto</a>
-                </li>
-                <li class="nav-item active">
-                        <a class="nav-link text-white-50 font-weight-bold" href={{asset("product")}}>Servicios</a>
+                </li> --}}
+                <li class="nav-item active pl-5">
+                    <h4><a class="nav-link text-white-50 font-weight-bold " href={{asset("product")}}>Servicios</a></h4>
                 </li>
                 </ul>
             </ul>
@@ -29,35 +30,40 @@
             <ul class="navbar-nav mr-auto text-center">
                     @if(auth()->user())
                     <li class="nav-link">
-                      <a class="nav-link text-white-50 font-weight-bold" href="{{url("perfil")}}">{{Auth::User()->name}}</a>
+                        <h4><a class="nav-link text-white-50 font-weight-bold" href="{{url("perfil")}}">{{Auth::User()->name}}</a></h4>
                     </li>
                   @endif
                   @if(auth()->user() && auth()->user()->role === 9)
                     <li class="nav-link">
-                     <a class="nav-link text-white-50 font-weight-bold" href={{asset("perfilAdm")}}>Administrar</a>
+                        <h4><a class="nav-link text-white-50 font-weight-bold" href={{asset("perfilAdm")}}>Administrar</a></h4>
                     </li>
                   @endif
                   @if(auth()->user())
                     <li class="nav-link">
-                      <a class="nav-link text-white-50 font-weight-bold" href="{{ route('logout') }}"
+                        <h4><a class="nav-link text-white-50 font-weight-bold" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">{{ __('Logout') }}  <i class="fas fa-sign-out-alt"></i></a>
+                        document.getElementById('logout-form').submit();">{{ __('Logout') }}  <i class="fas fa-sign-out-alt"></i></a></h4>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                         </form>
                     </li>
                   @else
                     <li class="nav-link ">
-                        <a id="login" class="nav-link text-white-50 font-weight-bold" href="{{route('login')}}">Ingresar</a>
+                        <h4><a id="login" class="nav-link text-white-50 font-weight-bold pr-5" href="{{route('login')}}">Ingresar</a></h4>
                     </li>
                   @endif
-                  @if(!auth()->user())
+                  {{-- La funcionalidad de registarse queda en en ingresar--}}
+                  {{-- @if(!auth()->user())
                   <li class="nav-link">
                   <a class="nav-link text-white-50 font-weight-bold" href='{{ route('register') }}'>Registrarse</a>
                   </li>
-                  @endif
+                  @endif --}}
                   <li class="nav-link">
+<<<<<<< HEAD
                         <a class="nav-link text-white-50 font-weight-bold" href={{asset("cart")}}>Carrito<i class="fas fa-shopping-cart"></i></a>
+=======
+                    <h4><a class="nav-link text-white-50 font-weight-bold" href={{asset("cart")}}>Carrito<i  class="fas fa-shopping-cart ml-3"></i></a></h4>
+>>>>>>> devP
                     </li>
                 </ul>
         </div>

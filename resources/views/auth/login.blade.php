@@ -9,7 +9,8 @@
         </div>
             <div class="gssform-panel one">
                 <div class="gssform-header"> 
-                    <h1>{{ __('Login') }}</h1>
+                    <h1>{{ __('Acceder') }}</h1>
+                    <H6> y se parte de la comunidad LavaBien</H6>
                 </div>
 
                     <div class="gssform-content">

@@ -29,7 +29,7 @@
     border-radius: 1px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .1);
     box-sizing: border-box;
-    margin: 50px auto 10px;
+    margin: 150px auto 10px;
     margin-bottom: 50px;
     overflow: hidden;
 }
@@ -150,7 +150,8 @@
     color:rgb(249, 149, 120);
     font-size: 12px;
     text-decoration: none;
-    margin-left: 170px;
+    margin-left: 160px;
+    padding: 0%;
 }
 .gssform-panel {
     padding: 60px calc(5% + 60px) 60px 60px;

@@ -14,8 +14,6 @@ class ContactFormControler extends Controller
    public function store(){
 
 
-    // $data = request()['name','phone','email','message'];
-
        //Cambiar validacion a JS
        $data = request()->validate([
            'name'=>'required',

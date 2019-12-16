@@ -1,5 +1,7 @@
 @media (min-width: 992px) {
     .navbar {
         height:50px;
+       background-color: #F99578;
+       margin-bottom: 90px;
     }
 }

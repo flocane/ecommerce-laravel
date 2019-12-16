@@ -25,11 +25,11 @@
     position: relative;
     background: #fff;
     width: 550px;
-    height: 660px;
+    height: 680px;
     border-radius: 1px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .1);
     box-sizing: border-box;
-    margin: 50px auto 10px;
+    margin: 100px auto 10px;
     margin-bottom: 50px;
     overflow: hidden;
 }
@@ -150,7 +150,8 @@
     color:rgb(249, 149, 120);
     font-size: 12px;
     text-decoration: none;
-    margin-left: 170px;
+    margin-left: 160px;
+    padding: 0%;
 }
 .gssform-panel {
     padding: 60px calc(5% + 60px) 60px 60px;
@@ -180,6 +181,7 @@
     transition: 0.3s ease;
     cursor: pointer;
 }
+
 .gssform-panel.two:before, .gssform-panel.two:after {
     content: '';
     display: block;
@@ -246,4 +248,27 @@
 .gsscp-fab {
     background: #fff !important;
     color: rgb(249, 149, 120) !important;
+}
+
+/*Esto lo trabajo para dar formato al modal*/
+
+#formContainer {
+    height: 50%;
+    width: 50%;
+  }
+  
+  #termsConditionModal .terms-text {
+    max-height: 60%;
+    overflow: auto;
+    background-color: #fff;
+  }
+
+  .terms-text{
+      font-size: 10px;
+      text-align: justify;
+      text-justify: inter-word;
+  }
+
+  #registerPasserror{
+font-size: 10px;
 }

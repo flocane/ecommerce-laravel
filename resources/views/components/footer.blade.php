@@ -1,6 +1,6 @@
-<footer class= "footFont p-3 footLayout">
+<footer class= "footFont p-3 footLayout ml-4 mr-4">
     <div class="row mx-0">
-      <div class="col-lg-4 col-md-4 col-sm-12 border-right border-white  footFont">
+      <div class="col-lg-4 col-md-4 col-sm-12  d-none d-md-block border-right border-white  footFont">
         <h4 class="footFont"><strong>Informacion de interes</strong></h4>
         <div>
           <ul style="list-style:none" class="footFont">

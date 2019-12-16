@@ -5,7 +5,7 @@ use App\User;
 use App\Product;
 class homeController extends Controller
 {
-    
+
     public function index()
     {
         return view('home');
@@ -16,7 +16,7 @@ class homeController extends Controller
     }
     public function contact()
     {
-        return view('contact');
+        return view('/contact/create');
     }
     public function register()
     {
@@ -40,6 +40,6 @@ class homeController extends Controller
         $categories = Category::all();
         return view('perfilAdm')->with('users', $users)
                                 ->with('products',$product);
-                                
+
     }
 }

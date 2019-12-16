@@ -1,5 +1,62 @@
-perfil-y{
-    
-    background:#f8f8f8
-}
-   
+.profile {
+    position: inline-block;
+    padding: 15px;
+    margin: 30px 65px 10px 65px;
+    width: 20%;
+    min-width: 300px;
+    max-width: 600px;
+    text-align: center;
+    background: #F4F2F4;
+    border-radius: 2px;
+  }
+  .profile:hover img {
+    transform: rotate(-3deg);
+  }
+  .profile:hover .bar span {
+    opacity: 1;
+  }
+  .profile img {
+    width: 100px;
+    border-radius: 90px;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 6px -6px #555;
+    transition: transform 1s;
+  }
+  .profile .bar span {
+    width: 20%;
+    opacity: 0.5;
+    display: inline-block;
+    height: 5px;
+    padding: 0;
+    margin: 15px 0;
+    transition: opacity 1s;
+  }
+  .profile .bar span.one {
+    background-color: #5C96BC;
+  }
+  .profile .bar span.two {
+    background-color: #42E31B;
+  }
+  .profile .bar span.three {
+    background-color: #FEDE16;
+  }
+  .profile .bar span.four {
+    background-color: #E66504;
+  }
+  .profile .bar span.five {
+    background-color: #C60600;
+  }
+  .profile h1, .profile h2 {
+    color: #333;
+    text-rendering: optimizeLegibility;
+  }
+  .profile h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .profile h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    line-height: 22px;
+  }

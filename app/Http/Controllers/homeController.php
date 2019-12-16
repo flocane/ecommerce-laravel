@@ -37,7 +37,6 @@ class homeController extends Controller
     {
         $users= User::all();
         $product = Product::all();
-        $categories = Category::all();
         return view('perfilAdm')->with('users', $users)
                                 ->with('products',$product);
 

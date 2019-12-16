@@ -24,6 +24,7 @@ Route::get('/FAQ', 'homeController@about');
 //Contacto
 Route::get('/contact', 'ContactFormControler@create');
 Route::post('/contact', 'ContactFormControler@store');
+
 //
 //Route::post('/contact', 'homeController@store');
 Route::get('/perfil', 'homeController@perfil');
@@ -48,11 +49,7 @@ Route::get('/cart', 'CartController@cart');
 Route::get('/add-to-cart/{id}', 'CartController@addToCart');
 Route::get('/deleteCart/{id}', 'CartController@deleteCart');
 Route::get('/checkout', 'CartController@checkout');
-<<<<<<< HEAD
-// USERS
-=======
-// USERS|
->>>>>>> devMailing
+
 Route::get('/users/index', 'UsersController@index')->name('users.index');
 Route::get('/users/show/{id}', 'UsersController@show')->name('users.show');
 Route::get('/users/{id}/update', 'UserController@edit')->name('users.edit');

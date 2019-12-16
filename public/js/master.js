@@ -1,6 +1,7 @@
 window.addEventListener('load',function(){
 
   //para hacer pasar los paneles
+  
     let panelOne = $('.gssform-panel.two').height(),
       panelTwo = $('.gssform-panel.two')[0].scrollHeight;
 
@@ -10,9 +11,7 @@ window.addEventListener('load',function(){
       $('.gssform-toggle').addClass('visible');
       $('.gssform-panel.one').addClass('hidden');
       $('.gssform-panel.two').addClass('active');
-      $('.gssform').animate({
-        'height': panelTwo
-      }, 200);
+      
     });
 
     $('.gssform-toggle').on('click', function(e) {
@@ -20,15 +19,12 @@ window.addEventListener('load',function(){
       $(this).removeClass('visible');
       $('.gssform-panel.one').removeClass('hidden');
       $('.gssform-panel.two').removeClass('active');
-      $('.gssform').animate({
-        'height': panelOne
-      }, 200);
     });
 
 
     //VALIDACIONES PARA FORMULARIO
   let fomulario = document.querySelector('.formReg');
-  console.log('Ver')
+  console.log(formulario.elements);
   formulario.elements.name.focus();
 
   formulario.onsubmit = function(evento) {
@@ -36,28 +32,27 @@ window.addEventListener('load',function(){
     if (!validateRegisterForm()) {
       evento.preventDefault()
     }else{
-      formulario.submit()
+      formulario.submit();
     }
   }
 
     //Esta es la función que valida todos los campos del formulario
     function validateRegisterForm() {
-       let {name, email, password, passwordRepeat, termsCondition } = formulario.elements;
-
+       let {name, email, password, password_confirmation, termsCondition} = formulario.elements;
        console.log(formulario.elements);
       
        //valido cada campo
-       if (!validateEmail(name)) return false; 
+      if (!validatename(name)) return false; 
       if (!validateEmail(email)) return false;
       if (!validatePassword(password)) return false;
-      if (!validatePasswordRepeat(password, passwordRepeat)) return false;
+      if (!validatePasswordRepeat(password, password_confirmation)) return false;
       if (!validateTermsCondition(termsCondition)) return false;
       return true;
       }
 
 
       function validatename(name) {
-        let errorname = document.getElementById('errorNombreUsuario');
+        let errorname = document.getElementById('errorname');
         if (name.value.length < 1){
           errorname.innerHTML = "Nombre de usuario invalido";
           errorname.classList.add('alert-danger');
@@ -68,7 +63,7 @@ window.addEventListener('load',function(){
           errorname.classList.remove('alert-danger');
           name.classList.remove('is-invalid');
           name.classList.add('is-valid');
-          formulario.elements.termsCondition.focus();
+          formulario.elements.email.focus();
           return true;
         }
     
@@ -119,8 +114,6 @@ window.addEventListener('load',function(){
           password.classList.remove('is-invalid');
           password.classList.add('is-valid');
           formulario.elements.passwordRepeat.focus();
-          //Esto se los coloque para que vean que de igual forma pueden enviar una pantalla de alert al usuario, pero usando la libreria sweetalert
-          // swal('Error', 'Ingrese una contraseña válida', 'error')
           return true;
         }    
       }
@@ -129,8 +122,8 @@ window.addEventListener('load',function(){
       function validatePasswordRepeat(password,repeat){
       console.log(password.value);
       console.log(repeat.value);
-      if (password.value != repeat.value) {
-        errorPasswordRepeat.innerHTML = "Las conraseñas no coinciden";
+      if (password.value!= repeat.value) {
+        errorPasswordRepeat.innerHTML = "Las contraseñas no coinciden";
         errorPasswordRepeat .classList.add('alert-danger');
         repeat.classList.add('is-invalid');
         return false;  
@@ -140,7 +133,8 @@ window.addEventListener('load',function(){
         errorPasswordRepeat.classList.remove('alert-danger');
         repeat.classList.remove('is-invalid');
         repeat.classList.add('is-valid');
-        formulario.elements.name.focus();
+        formulario.elements.termsCondition.focus();
+        console.log('hasta aca ok')
         // swal('Error', 'Ingrese una contraseña válida', 'error')
         return true;
       }  
@@ -150,26 +144,25 @@ window.addEventListener('load',function(){
 
       // valida terminos y condiciones
       function validateTermsCondition(termsConditionChecked) {
-      let errorTerminos = document.getElementById('errorTerminos');
-      if (!termsConditionChecked.checked) {
-        console.log('Entro terminos');
-        console.log(termsConditionChecked);
-        console.log(termsConditionChecked.checked);
-        errorTerminos.innerHTML = "Debe aceptar los terminos y condiciones";
-        
-        errorTerminos.classList.add('alert-danger');
-        termsConditionChecked.classList.add('is-invalid');
-        return false;
-      }else{
-        errorTerminos.innerHTML = "";
-        errorTerminos.classList.remove('alert-danger');
-        termsConditionChecked.classList.remove('is-invalid');
-        termsConditionChecked.classList.add('is-valid');
-        console.log("Se va a salir de terminos");
-        return true;
+        let errorTerminos = document.getElementById('errorTerminos');
+        console.log ('errorTerminos');
+        if (!termsConditionChecked.checked) {
+          console.log('Entro terminos');
+          console.log(termsConditionChecked);
+          console.log(termsConditionChecked.checked);
+          errorTerminos.innerHTML = "Debe aceptar los terminos y condiciones";
+          errorTerminos.classList.add('alert-danger');
+          termsConditionChecked.classList.add('is-invalid');
+          return false;
+        }else{
+          errorTerminos.innerHTML = "";
+          errorTerminos.classList.remove('alert-danger');
+          termsConditionChecked.classList.remove('is-invalid');
+          termsConditionChecked.classList.add('is-valid');
+          console.log("Se va a salir de terminos");
+          return true;
+        }
+       // swal('Error', 'Debe aceptar los términos y condiciones', 'error')
       }
-  
-     // swal('Error', 'Debe aceptar los términos y condiciones', 'error')
-    }
 
   });

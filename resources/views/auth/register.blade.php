@@ -17,7 +17,7 @@
 
                                 <div class="gssform-group">
                                     <label for="name" >{{ __('Usuario') }}</label>
-                                    <input  autofocus id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Ingrese su usuario">
+                                    <input  autofocus id="name" name="name" type="text" class="form-control @error('name') is-invalid @enderror"  value="{{ old('name') }}" required autocomplete="name" placeholder="Ingrese su usuario">
 
                                         @error('name')
                                             <span role="alert">
@@ -33,11 +33,11 @@
                                     <label for="email">{{ __('E-Mail') }}</label>
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Ingrese su E-Mail">
 
-                                        <!--@error('email')
+                                        @error('email')
                                             <span role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                        @enderror -->
+                                        @enderror
 
                                         <p id="errorEmail"><!--aca iria el error--><p>
                                 </div>
@@ -51,32 +51,36 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
-                                        <p id="errorPassword"><!--aca iria el error--><p>
+
+                                        <div id="errorPassword"></div>
+                                        <p id="registerPasserror" class="form-text text-muted">Al menos 6 caracteres, debe contenter letras en mayúsculas, minúsculas y números</p>
                                 </div>
 
                                 <div class="gssform-group" >
                                     <label for="password-confirm" >{{ __('Re-Password') }}</label>
-                                    <input id="passwordRepeat" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password" placeholder="Ingrese nuevamente su contraseña">
+                                    <input id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password" placeholder="Ingrese nuevamente su contraseña">
                                 
                                          <p id="errorPasswordRepeat"><!--aca iria el error--><p>
                                 </div>
 
+                                
                                 <div class="form-check">
                                     <input type="radio" class="form-check-input" id="termsCondition" name="termsCondition">
                                     <label class="gssform-remember" for="termsCondition">Acepto 
                                         <button id="termsConditionButton" type="button" class="btn btn-link" data-toggle="modal" data-target="#termsConditionModal">términos y condiciones</button></label>
-                                    <div id="errorTerminos"></div>  
-
+                                    
+                                    <div id="errorTerminos"></div> 
                                     <p id="errorTerminos"><!--aca iria el error--><p>
 
-                                </div>
+                                </div> 
 
-                                <div >
-                                    <div class="gssform-group mb-0" >
+
+                                <div class="gssform-group mb-0" >
                                         <button type="submit">
                                             {{ __('Registrarse') }}
                                         </button>
-                                    </div>
+                                </div>
+                                    
                             </form>
                         </div>
 
@@ -88,6 +92,7 @@
                 <div class="gssform-header">
                 <h1>REGISTRARME</h1>
                 </div>
+
                 <div class="gssform-content">
                     <h2>HOLA ACA VA MENSAJE</h2>
                  </div>

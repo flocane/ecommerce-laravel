@@ -1,3 +1,7 @@
+<link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
 <footer class= "footFont p-3 footLayout ml-4 mr-4">
     <div class="row mx-0">
       <div class="col-lg-4 col-md-4 col-sm-12  d-none d-md-block border-right border-white  footFont">
@@ -12,13 +16,14 @@
 
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 border-right border-white">
-          <h4 class="footFont"><strong>Nuestras Redes Sociales</strong></h4>
-          <p class="iconos mt-4">
-                <a href="http://wa.me/541130847961?text=hola queria realizar el siguiente pedido "><i class="fab fa-whatsapp"></i></a>
+        <h4 class="footFont"><strong>Nuestras Redes Sociales</strong></h4>
+                    
+          <div class="iconos mt-4 sizeSocialMediaIcon " >
+                <a href="http://wa.me/541130847961?text=hola queria realizar el siguiente pedido "><i class="fab fa-whatsapp icon"></i></a>
                 <a href="https://www.facebook.com/lavadero.lavabien.79"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/?hl=es-la"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-              </p>
+          </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 d-none d-md-block google-maps ">
                 <h4 class="footFont"><strong>Ubicacion</strong></h4>

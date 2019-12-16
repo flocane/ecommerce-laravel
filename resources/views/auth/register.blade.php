@@ -90,11 +90,11 @@
 
             <div class="gssform-panel two">
                 <div class="gssform-header">
-                <h1>REGISTRARME</h1>
+                <h1>TENES PROBLEMAS PARA REGISTRARTE?</h1>
                 </div>
 
                 <div class="gssform-content">
-                    <h2>HOLA ACA VA MENSAJE</h2>
+                    <h7>Llamanos al 0-800-LAV-AOK</h7>
                  </div>
 
                  

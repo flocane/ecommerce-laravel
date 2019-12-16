@@ -24,7 +24,7 @@ Route::get('/FAQ', 'homeController@about');
 //Contacto
 Route::get('/contact', 'ContactFormControler@create');
 Route::post('/contact', 'ContactFormControler@store');
-//
+
 //Route::post('/contact', 'homeController@store');
 Route::get('/perfil', 'homeController@perfil');
 Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('admin');

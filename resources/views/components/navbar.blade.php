@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  sticky-top  navbar-light  border border-white mt-4 ml-4 mr-4" style="background-color: #F99578" >
+<nav class="navbar navbar-expand-lg  sticky-top  navbar-light  border border-white mt-4 ml-4 mr-4">
         <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
             <ul class="navbar-nav ml-auto " style="font-color:white">
                 <li class="nav-item active ml-5">
@@ -19,7 +19,7 @@
         </div>
         <div class="mx-auto my-2 order-0 order-md-1 position-relative">
             <a class="mx-auto" href={{asset("home")}}>
-                <img src="img/layout/ironLogo.png"  class="rounded-circle"  width="140" height="140" >
+                <img src="img/layout/logolavabien1.png"  width="300" >
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>

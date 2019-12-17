@@ -56,7 +56,7 @@ Route::get('/history', 'CartController@history')->middleware('auth');
 // USERS|
 Route::get('/users/index', 'UsersController@index')->name('users.index');
 Route::get('/users/show/{id}', 'UsersController@show')->name('users.show');
-Route::get('/users/edit', 'UserController@edit')->name('user.edit');
+Route::get('/users/{id}/edit/', 'UserController@edit')->name('user.edit');
 Route::patch('/users/{id}/update', 'UserController@update');
 Route::delete('users/{id}', 'UserController@destroy')->name('users.detroy');
 

@@ -1,5 +1,4 @@
 .foot{
-    color: white;
     text-decoration: none;
   }
   .iconos i:hover{
@@ -7,13 +6,11 @@
     cursor: pointer;
   }
   .iconos i{
-    font-size: 60px;
-  margin-left: 5px;
+    font-size: 40px;
+    padding: 10px;
   transition: color 0.4s ease;
   }
-  .iconos{
-    margin-left: 10px;
-  }
+  
   .iconos i.fa-whatsapp:hover{
     color: green;
   }
@@ -33,8 +30,9 @@
 
   }
   .footLayout{
-    height: 200px;
     background-color: rgba(182, 179, 178, 0.3);
+    bottom: 0;
+    height: 200px; 
 
   }
 .map{
@@ -47,6 +45,6 @@
         position: relative;
         top: 0;
         left: 0;
-        width: 75% !important;
+        width: 50% !important;
         height: 75% !important;
     }

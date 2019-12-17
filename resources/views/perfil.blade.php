@@ -1,6 +1,7 @@
 @extends('layouts.master');
 @section('content')  
 <body>
+
   <br>
   <br>
   <br>
@@ -34,11 +35,11 @@
       </div>
       <div class="profile col-4">
                 <h1>Mis datos</h1>
-                
-                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{route('user.edit')}}">Editar Datos
+              
+                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos
                     </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
+                  
+
                     </form>
                 </button>
                 <div class="bar">

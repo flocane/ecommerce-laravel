@@ -24,6 +24,8 @@ window.addEventListener('load',function(){
 
     //VALIDACIONES PARA FORMULARIO
   let fomulario = document.querySelector('.formReg');
+  let botonClickAqui = document.getElementById('clickAqui');
+  console.log(botonClickAqui);
   console.log(formulario.elements);
   formulario.elements.name.focus();
 
@@ -35,6 +37,11 @@ window.addEventListener('load',function(){
       formulario.submit();
     }
   }
+
+  botonClickAqui.addEventListener('click', function (){ 
+    
+  });
+
 
     //Esta es la función que valida todos los campos del formulario
     function validateRegisterForm() {

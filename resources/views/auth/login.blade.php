@@ -69,10 +69,17 @@
 
             <div class="gssform-panel two">
                 <div class="gssform-header">
-                <h1>ACCEDER</h1>
+                <h1>QUERES REGISTRARTE?</h1>
                 </div>
                 <div class="gssform-content">
-                    <h2>HOLA ACA VA MENSAJE</h2>
+                    <a id ='clickAqui' class='clickAqui' href="{{ route('register') }}">Hace click aqui</a>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class='imagenRegister'></div>
+                    <img src="img/layout/registro.png" width="300" >
+                    
                  </div>
             </div>
     

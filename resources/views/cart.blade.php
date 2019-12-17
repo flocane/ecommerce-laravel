@@ -72,7 +72,10 @@
             </table>
 
             <div>
+            <form class="" action="/cartclose" method="post">
+              @csrf
                 <a href="{{ url('checkout/')}}"><button type="button" class="btn btn-outline-success mb-5">Elegir medio de pago</button></a>
+                </form>
             </div>
             @endif
         </div>

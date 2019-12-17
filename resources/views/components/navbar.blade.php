@@ -34,11 +34,9 @@
                         <h4><a class="nav-link text-white-50 font-weight-bold size" href="{{url("perfil")}}">{{Auth::User()->name}}</a></h4>
                     </li>
                   @endif
-                  @if(Auth::user()->rol === '9')
-                    <li class="nav-link">
-                        <h4><a class="nav-link text-white-50 font-weight-bold siza" href={{asset("perfilAdm")}}>Administrar</a></h4>
-                    </li>
-                  @endif
+                 
+              
+
                   @if(auth()->user())
                     <li class="nav-link">
                         <h4><a class="nav-link text-white-50 font-weight-bold size" href="{{ route('logout') }}"

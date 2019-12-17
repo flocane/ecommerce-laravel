@@ -72,7 +72,7 @@
                 <h1>QUERES REGISTRARTE?</h1>
                 </div>
                 <div class="gssform-content">
-                    <a class='clickAqui' href="{{ route("register") }}">Hace click aqui</a>
+                    <a id ='clickAqui' class='clickAqui' href="{{ route('register') }}">Hace click aqui</a>
                     <br>
                     <br>
                     <br>

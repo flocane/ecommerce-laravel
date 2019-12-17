@@ -4,7 +4,7 @@
 }
 .gssbody {
     background: linear-gradient(70deg, rgba(245, 245, 245, 0.4) 0%, rgba(255,255,255,0.4) 50%);
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(78, 74, 74, 0.6);
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     line-height: 1.6em;
@@ -168,12 +168,13 @@
     display: block;
     opacity: 1;
     visibility: visible;
+    background-color: rgba(78, 74, 74, 0.2);
 }
 .gssform-panel.two {
     z-index: 5;
     position: absolute;
     top: 0;
-    left: 95%;
+    left: 93%;
     background:rgb(249, 149, 120);
     width: 100%;
     min-height: 100%;
@@ -204,7 +205,7 @@
     opacity: 0;
 }
 .gssform-panel.two.active {
-    left: 10%;
+    left: 7%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     cursor: default;
 }
@@ -225,6 +226,8 @@
     position: relative;
     z-index: 40;
     color: #fff;
+    font-size: 24px;
+    margin-top: 60px;
 }
 .gsspen-footer {
     display: flex;
@@ -271,4 +274,14 @@
 
   #registerPasserror{
 font-size: 10px;
+}
+
+
+.clickAqui {
+    font-size: 20px;  
+}
+
+.imagenRegister {
+    background: url("./img/layout/registro.png");
+   width: 200px;
 }

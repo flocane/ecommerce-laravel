@@ -1,7 +1,7 @@
 @extends('layouts.master');
 @section('content')  
 <body>
-   @dd(Auth::user())
+
   <br>
   <br>
   <br>
@@ -36,7 +36,7 @@
       <div class="profile col-4">
                 <h1>Mis datos</h1>
               
-                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{route('user.edit')}}">Editar Datos
+                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos
                     </a>
                   
 

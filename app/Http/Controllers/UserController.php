@@ -127,7 +127,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
          
-            'lastname' => 'required',
+            //'lastname' => 'required',
            
         ];
 
@@ -150,12 +150,10 @@ class UserController extends Controller
         
         $users->avatar = $request->input('avatar') !== $users->avatar ? $request->input('avatar') : $users->avatar;
        
-        $users->lastname = $request->input('lastname') !== $users->lastname ? $request->input('lastname') : $users->lastname;
+        $users->last_name = $request->input('last_name') !== $users->last_name ? $request->input('last_name') : $users->last_name;
         
         $users->adress = $request->input('adress') !== $users->adress ? $request->input('adress') : $users->adress;
 
-
-        $users->country = $request->input('province') !== $users->country ? $request->input('province') : $users->country;
         
         $users->zipcode = $request->input('zipcode') !== $users->zipcode ? $request->input('zipcode') : $users->zipcode;
 

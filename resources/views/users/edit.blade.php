@@ -13,12 +13,12 @@
     <br>
     <br>
     <br>
-    <div class="carrito col-6">
+    <div class="col-6 my-3">
         <h1 class="text-center">Editar Usuario</h1>
         <div class="bar">
                 <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
         </div>
-    <form class="" action="users/update/{{$user->id}}" method="POST" enctype="multipart/`form-data">
+    <form class="" action="/users/update/{{$user->id}}" method="POST" enctype="multipart/`form-data">
       
         @csrf
         <h1>Actualiza tus Datos</h1>
@@ -33,8 +33,8 @@
         </div>
         <div class="form-group"> <!-- Apellido -->
             <label for="apellido" class="control-label">Apellido</label>
-            <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{$user->lastname}}" required autocomplete="lastname" autofocus placeholder="Ingresar el Apellido">
-            @error('lastname')
+            <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{$user->last_name}}" required autocomplete="last_name" autofocus placeholder="Ingresar el Apellido">
+            @error('last_name')
             <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
             </span>

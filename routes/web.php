@@ -52,7 +52,7 @@ Route::get('/checkout', 'CartController@checkout');
 Route::get('/users/index', 'UsersController@index')->name('users.index');
 Route::get('/users/show/{id}', 'UsersController@show')->name('users.show')->middleware('auth');
 Route::get('/users/{id}/edit/', 'UserController@edit')->name('user.edit')->middleware('auth');
-Route::post('/users/update/{id}', 'UserController@update')->middleware('auth');
+Route::post('/users/update/{id}', 'UserController@update');
 Route::delete('users/{id}', 'UserController@destroy')->name('users.detroy')->middleware('auth');
 
 

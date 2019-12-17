@@ -101,12 +101,7 @@ class UserController extends Controller
         $reglas = [
             
             'adress' => 'required',
-            'location' => 'required',
-            'stade' => 'required',
             'zipcode' => 'required',
-            'country' => 'required',
-            'avatar' => 'required',
-            'role' => 'required',
         ];
 
         $mensajes = [
@@ -117,11 +112,10 @@ class UserController extends Controller
         $users = User::find($id);
 
          $users->adress = $request->input('adress') !== $users->adress ? $request->input('adress') : $users->adress;
-         $users->location = $request->input('location') !== $users->location ? $request->input('location') : $users->location;
-         $users->stade = $request->input('stade') !== $users->stade ? $request->input('stade') : $users->stade;
-         $users->country = $request->input('country') !== $users->country ? $request->input('country') : $users->country;
+         
+       
+      
          $users->zipcode = $request->input('zipcode') !== $users->zipcode ? $request->input('zipcode') : $users->zipcode;
-         $users->avatar = $request->input('avatar') !== $users->avatar ? $request->input('avatar') : $users->avatar;
 
          $users->save();
 
@@ -132,14 +126,9 @@ class UserController extends Controller
         $rules = [
             'name' => 'required',
             'email' => 'required',
-            // 'password' => 'required', 
-            // 'avatar' => 'required',
+         
             'lastname' => 'required',
-            // 'adress' => 'required',
-            // 'location' => 'required',
-            // 'stade' => 'required',
-            // 'country' => 'required',
-            // 'zipcode' => 'required',
+           
         ];
 
         $messages = [
@@ -165,17 +154,14 @@ class UserController extends Controller
         
         $users->adress = $request->input('adress') !== $users->adress ? $request->input('adress') : $users->adress;
 
-        $users->location = $request->input('location') !== $users->location ? $request->input('location') : $users->location;
 
-        $users->stade = $request->input('stade') !== $users->stade ? $request->input('stade') : $users->stade;
-
-        $users->country = $request->input('country') !== $users->country ? $request->input('country') : $users->country;
+        $users->country = $request->input('province') !== $users->country ? $request->input('province') : $users->country;
         
         $users->zipcode = $request->input('zipcode') !== $users->zipcode ? $request->input('zipcode') : $users->zipcode;
 
         $users->save();
         
-        return redirect("/perfilAdm/");
+        return redirect("/perfil/");
 
     }
 

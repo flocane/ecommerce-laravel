@@ -27,7 +27,7 @@ Route::post('/contact', 'ContactFormControler@store');
 
 //Route::post('/contact', 'homeController@store');
 Route::get('/perfil', 'homeController@perfil');
-Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('admin');
+Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('Admin');
 //Route::get('/login', 'homeController@login');
 // Route::get('/registro', 'homeController@register');
 
@@ -38,7 +38,7 @@ Route::get('product-detail/{id}', 'ProductController@detail');
 Route::get('/products/create', 'ProductController@create')->name('products.create');
 Route::post('/products/create', 'ProductController@store');
 Route::get('/products/show','ProductController@show');
-Route::get('/products/{id}/update','ProductController@edit')->name('products.edit')->middleware('admin');
+Route::get('/products/{id}/update','ProductController@edit')->name('products.edit')->middleware('Admin');
 Route::patch('/products/{id}/update', 'ProductController@update')->name('products.update');
 Route::delete('/products/{id}/', 'ProductController@destroy')->name('products.destroy');
 Route::post('products/search', 'ProductController@search')->name('products.search');
@@ -52,7 +52,7 @@ Route::get('/checkout', 'CartController@checkout');
 Route::get('/users/index', 'UsersController@index')->name('users.index');
 Route::get('/users/show/{id}', 'UsersController@show')->name('users.show');
 Route::get('/users/{id}/edit/', 'UserController@edit')->name('user.edit');
-Route::patch('/users/{id}/update', 'UserController@update');
+Route::post('/users/update/{id}', 'UserController@update');
 Route::delete('users/{id}', 'UserController@destroy')->name('users.detroy');
 
 

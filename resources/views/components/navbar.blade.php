@@ -43,7 +43,7 @@
     </li>
     @if (auth()->user()->rol == 9)
         <li class="nav-link">
-            <h4><a class="nav-link text-white-50 font-weight-bold" href={{asset("perfilAdm")}}>Administrar</a></h4>
+            <h4><a class="nav-link text-white-50 font-weight-bold" href={{url("perfilAdm")}}>Administrar</a></h4>
         </li>    
     @endif
     

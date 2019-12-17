@@ -1,10 +1,12 @@
 @extends('layouts.master');
 @section('content')  
-<body>
-    @if(Auth::check())
+@if (Auth::User()->rol != 9){
+    return redirect()->route('home');
+}
     
-        
-    @endif
+@endif
+<body>
+
   <br>
   <br>
   <br>

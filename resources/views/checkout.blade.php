@@ -39,9 +39,5 @@
         paypal.Buttons().render('#paypal-button-container');
     </script>
 </main>
-    
-
-
-
 
 @endsection

@@ -57,7 +57,7 @@
                     
                  
                   
->>>>>>> 6629562d48a4056aff178a5953f673fcfb435ce2
+
                   {{-- La funcionalidad de registarse queda en en ingresar--}}
                   {{-- @if(!auth()->user())
                   <li class="nav-link">

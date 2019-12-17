@@ -26,7 +26,7 @@ Route::get('/contact', 'ContactFormControler@create');
 Route::post('/contact', 'ContactFormControler@store');
 
 //Route::post('/contact', 'homeController@store');
-Route::get('/perfil', 'homeController@perfil');
+Route::get('/perfil', 'homeController@perfil') ->middleware('auth');
 Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('admin');
 //Route::get('/login', 'homeController@login');
 // Route::get('/registro', 'homeController@register');
@@ -55,10 +55,10 @@ Route::get('/history', 'CartController@history')->middleware('auth');
 
 // USERS|
 Route::get('/users/index', 'UsersController@index')->name('users.index');
-Route::get('/users/show/{id}', 'UsersController@show')->name('users.show');
-Route::get('/users/{id}/edit/', 'UserController@edit')->name('user.edit');
-Route::patch('/users/{id}/update', 'UserController@update');
-Route::delete('users/{id}', 'UserController@destroy')->name('users.detroy');
+Route::get('/users/show/{id}', 'UsersController@show')->name('users.show')->middleware('auth');
+Route::get('/users/{id}/edit/', 'UserController@edit')->name('user.edit')->middleware('auth');
+Route::post('/users/update/{id}', 'UserController@update');
+Route::delete('users/{id}', 'UserController@destroy')->name('users.detroy')->middleware('auth');
 
 
 

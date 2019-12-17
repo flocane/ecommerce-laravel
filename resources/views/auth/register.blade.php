@@ -17,7 +17,7 @@
 
                                 <div class="gssform-group">
                                     <label for="name" >{{ __('Usuario') }}</label>
-                                    <input  autofocus id="name" name="name" type="text" class="form-control @error('name') is-invalid @enderror"  value="{{ old('name') }}" required autocomplete="name" placeholder="Ingrese su usuario">
+                                    <input  autofocus id="name" name="name" type="text" class="form-control @error('name') is-invalid @enderror"  value="{{ old('name') }}" autocomplete="name" placeholder="Ingrese su usuario">
 
                                         @error('name')
                                             <span role="alert">
@@ -94,7 +94,8 @@
                 </div>
 
                 <div class="gssform-content">
-                    <h7>Llamanos al 0-800-LAV-AOK</h7>
+                    <button type="submit" id='poseo'>Ya tengo una cuenta</button>
+                    
                  </div>
 
                  

@@ -20,7 +20,7 @@
     </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
         <a class="mx-auto" href={{asset("home")}}>
-            <img src="img/layout/logolavabien1.png"  width="300" >
+        <img src="{{asset('img/layout/logolavabien1.png')}}"  width="300" >
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
     </li>
     @if (auth()->user()->rol == 9)
         <li class="nav-link">
-            <h4><a class="nav-link text-white-50 font-weight-bold" href={{asset("perfilAdm")}}>Administrar</a></h4>
+            <h4><a class="nav-link text-white-50 font-weight-bold" href={{url("perfilAdm")}}>Administrar</a></h4>
         </li>    
     @endif
     
@@ -57,7 +57,7 @@
                     
                  
                   
->>>>>>> 6629562d48a4056aff178a5953f673fcfb435ce2
+
                   {{-- La funcionalidad de registarse queda en en ingresar--}}
                   {{-- @if(!auth()->user())
                   <li class="nav-link">

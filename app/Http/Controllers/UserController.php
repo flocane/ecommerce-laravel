@@ -13,7 +13,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //guardo todos los usuarios y me los llevo a la vista index
     {
         $users = User::all();
         return view('users.index')->with('users',$users);
@@ -35,7 +35,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //funcion para que el admin cree un usuario
     {
         $reglas = [
             'name' => 'required',
@@ -83,10 +83,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
+        $user = User::find($id); //capturo el usuario especifico de la db 
 
         return view('users.edit')
-            ->with('user', $user);
+            ->with('user', $user); //cargo la vista con los datos del usuario
     }
 
     /**
@@ -101,12 +101,7 @@ class UserController extends Controller
         $reglas = [
             
             'adress' => 'required',
-            'location' => 'required',
-            'stade' => 'required',
             'zipcode' => 'required',
-            'country' => 'required',
-            'avatar' => 'required',
-            'role' => 'required',
         ];
 
         $mensajes = [
@@ -117,11 +112,10 @@ class UserController extends Controller
         $users = User::find($id);
 
          $users->adress = $request->input('adress') !== $users->adress ? $request->input('adress') : $users->adress;
-         $users->location = $request->input('location') !== $users->location ? $request->input('location') : $users->location;
-         $users->stade = $request->input('stade') !== $users->stade ? $request->input('stade') : $users->stade;
-         $users->country = $request->input('country') !== $users->country ? $request->input('country') : $users->country;
+         
+       
+      
          $users->zipcode = $request->input('zipcode') !== $users->zipcode ? $request->input('zipcode') : $users->zipcode;
-         $users->avatar = $request->input('avatar') !== $users->avatar ? $request->input('avatar') : $users->avatar;
 
          $users->save();
 
@@ -132,14 +126,9 @@ class UserController extends Controller
         $rules = [
             'name' => 'required',
             'email' => 'required',
-            // 'password' => 'required', 
-            // 'avatar' => 'required',
-            'lastname' => 'required',
-            // 'adress' => 'required',
-            // 'location' => 'required',
-            // 'stade' => 'required',
-            // 'country' => 'required',
-            // 'zipcode' => 'required',
+         
+            //'lastname' => 'required',
+           
         ];
 
         $messages = [
@@ -161,21 +150,16 @@ class UserController extends Controller
         
         $users->avatar = $request->input('avatar') !== $users->avatar ? $request->input('avatar') : $users->avatar;
        
-        $users->lastname = $request->input('lastname') !== $users->lastname ? $request->input('lastname') : $users->lastname;
+        $users->last_name = $request->input('last_name') !== $users->last_name ? $request->input('last_name') : $users->last_name;
         
         $users->adress = $request->input('adress') !== $users->adress ? $request->input('adress') : $users->adress;
 
-        $users->location = $request->input('location') !== $users->location ? $request->input('location') : $users->location;
-
-        $users->stade = $request->input('stade') !== $users->stade ? $request->input('stade') : $users->stade;
-
-        $users->country = $request->input('country') !== $users->country ? $request->input('country') : $users->country;
         
         $users->zipcode = $request->input('zipcode') !== $users->zipcode ? $request->input('zipcode') : $users->zipcode;
 
         $users->save();
         
-        return redirect("/perfilAdm/");
+        return redirect("/perfil/");
 
     }
 

@@ -13,7 +13,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //guardo todos los usuarios y me los llevo a la vista index
     {
         $users = User::all();
         return view('users.index')->with('users',$users);
@@ -35,7 +35,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //funcion para que el admin cree un usuario
     {
         $reglas = [
             'name' => 'required',
@@ -83,10 +83,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
+        $user = User::find($id); //capturo el usuario especifico de la db 
 
         return view('users.edit')
-            ->with('user', $user);
+            ->with('user', $user); //cargo la vista con los datos del usuario
     }
 
     /**

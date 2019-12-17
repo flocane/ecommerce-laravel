@@ -1,10 +1,6 @@
 @extends('layouts.master');
 @section('content')  
 <body>
-    @if(Auth::check())
-    
-        
-    @endif
   <br>
   <br>
   <br>

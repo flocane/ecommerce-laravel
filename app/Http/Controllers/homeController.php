@@ -18,14 +18,7 @@ class homeController extends Controller
     {
         return view('/contact/create');
     }
-    public function register()
-    {
-        return view('register');
-    }
-    public function login()
-    {
-        return view('login');
-    }
+    
     public function perfil()
     {
         $user = User::all();

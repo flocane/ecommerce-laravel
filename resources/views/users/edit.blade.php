@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div class="container mt-5 mb-1">
+<div class="container-fluid">
     @if(count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
@@ -67,3 +67,4 @@
         <a href="{{url('perfil')}}"><button type="button" class="btn btn-primary"><-Volver</button></a>
         </form>
 </div>
+@endsection

@@ -39,9 +39,11 @@
               </div>
       </div>
       <div class="profile col-4">
-                <h1>Mis datos</h1>
+                <h1>Usuarios</h1>
               
-                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos
+                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/'.Auth::user()->id.'/edit/'}}">Mis Datos
+                    </a>
+                    <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/index'}}">Listado Usuarios
                     </a>
                   
 
@@ -56,6 +58,24 @@
                     <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
                 </div>
         </div>
+        <div class="profile col-4">
+            <h1>Productos</h1>
+          
+            <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/index'}}">Editar Datos
+                </a>
+              
+
+                </form>
+            </button>
+            <div class="bar">
+                <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
+            </div>
+                <h2> {{Auth::user()->email}}  </h2>
+            
+            <div class="bar">
+                <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
+            </div>
+    </div>
   </body>
   
 @endsection

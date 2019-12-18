@@ -82,7 +82,13 @@
                 <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
         </div>
         <button type="submit" class="btn btn-danger"> Actualizar </button>
-        <a href="{{url('perfil')}}"><button type="button" class="btn btn-primary"><-Volver</button></a>
+        @if (auth()->user()->rol == 9)
+        <a href="{{'/users/index'}}"><button type="button" class="btn btn-primary"><-Volver</button></a>
+           
+       @else
+       <a href="{{url('perfil')}}"><button type="button" class="btn btn-primary"><-Volver</button></a>
+       @endif
+        
         </form>
 </div>
 @endsection

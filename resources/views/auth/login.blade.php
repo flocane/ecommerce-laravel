@@ -72,11 +72,10 @@
                 <h1>QUERES REGISTRARTE?</h1>
                 </div>
                 <div class="gssform-content">
-                    <a id ='clickAqui' class='clickAqui' href="{{ route('register') }}">Hace click aqui</a>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                    
+                    
+                     <button class='gsstransparent_btn' type="submit" id='noposeo'>Resgistrate ahora</button>
+                    
                     <div class='imagenRegister'></div>
                     <img src="img/layout/registro.png" width="300" >
                     

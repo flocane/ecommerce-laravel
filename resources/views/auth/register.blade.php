@@ -94,8 +94,8 @@
                 </div>
 
                 <div class="gssform-content">
-                    <button type="submit" id='poseo'>Ya tengo una cuenta</button>
-                    
+                    <button class='gsstransparent_btn' type="submit" id='poseo'>Ya tengo cuenta! Quiero logearme</button>
+                               
                  </div>
 
                  

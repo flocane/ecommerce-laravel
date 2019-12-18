@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg  sticky-top  navbar-light  border border-white mt-4 ml-4 mr-4">
+<nav class="navbar navbar-expand-lg  sticky-top  navbar-light  border border-white mt-4">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto " style="font-color:white">
             <li class="nav-item active ml-5">

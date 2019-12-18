@@ -2,9 +2,9 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-<footer class= "footFont p-3 footLayout ml-4 mr-4">
+<footer class= "footFont p-3 footLayout">
     <div class="row mx-0">
-      <div class="col-lg-4 col-md-4 col-sm-12  d-none d-md-block border-right border-white  footFont">
+      <div class="col-lg-4 col-md-4 col-sm-12  d-none d-md-block border-right border-white footFont">
         <h4 class="footFont"><strong>Informacion de interes</strong></h4>
         <div>
           <ul style="list-style:none" class="footFont">

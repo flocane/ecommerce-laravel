@@ -1,11 +1,15 @@
 @media (min-width: 992px) {
     .navbar {
-        height:55px;
+    height:90px;
+    width: 100%;
        background-color: #F99578;
-       margin-bottom: 90px;
+       font-family: "Roboto", sans-serif;
+       font-size: 10px;
     }
 }
 
 .size{
     font-size: 22px;
+    width: 100%;
 }
+

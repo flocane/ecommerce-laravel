@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="gssbody" id="gss_form_gral">
+<div class="gssbody gssback" id="gss_form_gral">
     <div class="gssform">
         <div class="gssform-toggle">
         </div>

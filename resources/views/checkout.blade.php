@@ -1,9 +1,6 @@
 @extends('layouts.master');
 @section('content')  
 
-<p>hola soy checkout</p>
-
-<!DOCTYPE html>
 
 <head>
     <!-- Add meta tags for mobile and IE -->
@@ -25,9 +22,13 @@
             }
         }
     </style>
-</head>
+</head> 
 
-<main>
+
+<div class="row justify-content-center  checkout-y m-5" >
+        <div class="card col-md-6">
+            <h3>Total a pagar $</h3>
+<main class="m-5">
     <!-- Set up a container element for the button -->
     <div id="paypal-button-container"></div>
 
@@ -38,10 +39,10 @@
         // Render the PayPal button into #paypal-button-container
         paypal.Buttons().render('#paypal-button-container');
     </script>
-</main>
     
-
-
+</main>
+        </div>
+</div>
 
 
 @endsection

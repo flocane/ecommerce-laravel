@@ -1,6 +1,6 @@
 @extends('layouts.master');
 @section('content')
-<div class="formulario col-6 pssContactForm" >
+<div class="formulario col-6 pssContactForm" id="formulario">
         <div class="bar">
             <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
         </div>
@@ -11,7 +11,7 @@
     <fieldset>
         <div class="form-group mt-2 col-sm-12 col-md-8 col-lg-8"> <!-- Nombre -->
         <label for="name" class="control-label"><strong>Nombre Completo</strong></label>
-        <input type="text" class="form-control @error('name') is-invalid" @enderror id="name" name="name" value="{{old('name')}}" autofocus placeholder="Ingresar Nombre">
+        <input type="text" class="form-control @error('name') is-invalid" @enderror id="name" name="name" value="{{old('nombre')}}" autofocus placeholder="Ingresar Nombre">
         @error('name')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

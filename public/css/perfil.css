@@ -98,9 +98,9 @@
 
 
 .gssformprofile {
-      background: #fff;
+  background: rgba(255,255,255,0.9);
     width: 30%;
-    height: 450px;
+    height: 550px;
     border-radius: 1px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .1);
     box-sizing: border-box;
@@ -111,13 +111,15 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
-   flex-wrap: wrap;
+  flex-wrap: wrap;
   flex-direction: row;
- justify-content: space-around;
- align-items: stretch;
- margin-top: 50px;
- margin-bottom: 50px;
- width: 100%;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  width: 100%;
+  height:auto;
+  padding: 30px;
 
 }
 
@@ -255,3 +257,42 @@ a {
   margin-bottom: 5px;
 }
 
+
+.fotoPerfilgral {
+  background-image: url(../img/back3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.fader {
+  background: rgba(255,255,255,0.8);
+  width: 700px;
+  height: 700px;
+  border-radius: 1px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+
+.formDatosEditPerf {
+  width: 60%;
+  height: auto;
+  padding: 15px;
+  text-align: center;
+}
+
+.botonEdit{
+margin-right: 15px;
+height: auto;
+padding-left: 40px;
+padding-right: 40px;
+padding-top: 1px;
+padding-bottom: 1px;
+text-decoration: none;
+text-align: center;
+
+}

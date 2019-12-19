@@ -4,13 +4,7 @@
 
 @section('content')  
 
-<div class='gssbienvenido gsprofileTitulo'>
-
-</div>
-
-
-
-<div class="gsprofile">
+<div class="gsprofile fotoPerfilgral">
 
 <!-- div de foto - avatar -->
     <div class="gssformprofile">
@@ -27,7 +21,7 @@
     </div>
 
    
-<!-- div de datos - avatar -->          
+<!-- div de datos -->          
     </div>
 
         <div class="gssformprofile">
@@ -46,18 +40,17 @@
         </div>
 
         <div class="">
-            <label for="Direccion" class='campos'> Direccion</label>
+            <label for="Direccion" class='campos'> Direccion de envio</label>
             <p class='gssnombre2'> {{Auth::user()->adress}}</p>
             <hr class="hr2">
         </div>
              
     </div>
 
-<!-- div de datos - avatar -->     
+<!-- div de ultimas compras -->     
     <div class="gssformprofile">
        <p class="gssFontProf2">Mis operaciones recientes</p>
-
-       
+     
 
     </div>
              

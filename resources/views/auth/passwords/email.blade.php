@@ -83,7 +83,6 @@
     </fieldset>
 </form>
 </div>
-<script src="{{asset('js/formularioContact.js')}}"></script>
 @endsection
 
 

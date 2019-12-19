@@ -18,8 +18,8 @@ class ContactFormControler extends Controller
        $data = request()->validate([
            'name'=>'required|string',
            'phone'=>'required|numeric',
-           'email'=>'required',
-           'mensaje'=>'required'
+           'email'=>'required|email',
+           'mensaje'=>'required|string'
 
        ]);
        Mail::to('dhlavaderolavabien@gmail.com')->send(new ContactformMail($data));

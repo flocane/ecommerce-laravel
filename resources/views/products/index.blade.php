@@ -25,9 +25,9 @@
                     <td>{{$product->precio}}</td>
                     <td>{{$product->updated_at}}</td>
                     
-                    <td><a href="{{('/products/show/'.$product->id)}}">  <i class="fas fa-eye icono"></i></a></td>
+                    <td><a href="{{{('/product-detail/'.$product->id)}}}">  <i class="fas fa-eye icono"></i></a></td>
                     <td><a href="{{('/products/'.$product->id.'/update')}}" class="edit"><i class="fas fa-edit icono"></i></a></td>
-                    <td><form id='{{$product->id}}' class='form-delete' action="{{url('product/'.$product->id)}}" method="post">
+                    <td><form id='{{$product->id}}' class='form-delete' action="{{url('products/'.$product->id)}}" method="post">
                         @method('DELETE')
                         @csrf
                         <button id='delete-link-{{$product->id}}'class="delete"><i class="fas fa-trash-alt icono"></i></button>

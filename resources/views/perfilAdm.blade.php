@@ -65,6 +65,8 @@
           
             <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/products/index'}}">Ver Productos
                 </a>
+                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/products/create'}}">Agregar Producto
+                </a>
               
 
                 </form>

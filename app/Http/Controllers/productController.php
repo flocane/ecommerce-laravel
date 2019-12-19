@@ -58,11 +58,11 @@ class productController extends Controller
         $this->validate($request, $reglas, $mensajes);
 
  
-        $photopath_product = $request->file('imagen')->store('imagen', 'public');
+        $photopath_product = $request->file('imagen')->store('img', 'public');
  
         $product = new Product($request->all());
  
-        $product->picture = $photopath_product;
+        $product->imagen = $photopath_product;
  
         $product->save();
  
@@ -127,7 +127,7 @@ class productController extends Controller
          $product->descripcion = $request->input('descripcion') !== $product->descripcion ? $request->input('descripcion') : $product->descripcion;
          $product->precio = $request->input('precio') !== $product->precio ? $request->input('precio') : $product->precio;
          if($request->input('imagen') !== $product->imagen){
-             $photopath_product = $request->file('imagen')->store('imagen', 'public');
+             $photopath_product = $request->file('imagen')->store('img', 'public');
          }
          $product->imagen = $request->input('imagen') !== $product->imagen ? $photopath_product : $product->imagen;
   
@@ -146,7 +146,7 @@ class productController extends Controller
     {   
         $product = Product::find($id);
         $product->delete();
-        return redirect("/perfilAdm/");
+        return redirect("/products/index");
     }
     public function search(Request $request)
     {

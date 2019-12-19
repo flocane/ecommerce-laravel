@@ -24,17 +24,17 @@
             @csrf
         
         <div class="form-group">
-            <label for="name">Nombre</label>
-            <input type="text" name="name" value="{{$product->nombre}}" class="form-control">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" value="{{$product->nombre}}" class="form-control">
         </div>
         <div class="form-group">
             <label for="description">Descripcion</label>
-            <input type="text" name="description" value="{{$product->descripcion}}" class="form-control">
+            <input type="text" name="descripcion" value="{{$product->descripcion}}" class="form-control">
         </div>
         
         <div class="form-group">
-            <label for="price">Precio</label>
-            <input type="text" name="price" value="{{$product->precio}}" class="form-control">
+            <label for="precio">Precio</label>
+            <input type="text" name="precio" value="{{$product->precio}}" class="form-control">
         </div>
         
         <div class="form-group">

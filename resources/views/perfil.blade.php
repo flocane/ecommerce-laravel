@@ -1,55 +1,73 @@
-@extends('layouts.master');
-@section('content')  
-<body>
-  <br>
-  <br>
-  <br>
-  <div class=container2 col 12>
-    <div class="profile col-4">
-      <div>
-          @if ((Auth::User()->avatar))
-          <img width="40px" style="border-radius:50%" src="{{asset('storage/avatars/'.Auth::User()->avatar)}}" alt="avatar">
-          @endif
-          <img width="40px" style="border-radius:50%" src="img/avatardefault.png" alt="avatar">
-      </div>
-              <h1>Bienvenido/a:</h1>
-              <br>
-              {{Auth::user()->name}} {{Auth::user()->lastname}}
-              <br>
-              <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{ route('logout') }}"
-                  onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  @csrf
-                  </form>
-              </button>
-              <div class="bar">
-                  <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
-              </div>
-                  <h2> {{Auth::user()->email}}  </h2>
-              
-              <div class="bar">
-                  <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
-              </div>
-      </div>
-      <div class="profile col-4">
-                <h1>Mis datos</h1>
-              
-                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos
-                    </a>
-                  
+<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
-                    </form>
-                </button>
-                <div class="bar">
-                    <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
-                </div>
-                    <h2> {{Auth::user()->email}}  </h2>
-                
-                <div class="bar">
-                    <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
-                </div>
+@extends('layouts.master');
+
+@section('content')  
+
+<div class="gsprofile fotoPerfilgral">
+
+<!-- div de foto - avatar -->
+    <div class="gssformprofile">
+       <p class="gssFontProf2">Bienvenid@</p>
+       <hr>
+
+        <div class="container2">
+             <div class="avatar2 backhoundIMG">
         </div>
-  </body>
-  
+
+        <p class='gssnombre'>{{Auth::user()->name}} {{Auth::user()->lastname}}</p>
+        <button class='btn btn-outline-secondary boton'>actualizar mi foto de perfil</button>
+        <button type="button" class='btn btn-outline-secondary boton'> <a href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos</a>
+
+    </div>
+
+   
+<!-- div de datos -->          
+    </div>
+
+        <div class="gssformprofile">
+        <p class="gssFontProf2">Mis Datos</p>
+        <hr>
+        <br>
+
+        <div class="aline">
+            <label for="Nombre y apellido" class='campos'> Nombre y Apellido</label>
+            <p class='gssnombre2'> {{Auth::user()->name}} {{Auth::user()->last_name}}  </p>
+            <hr class="hr2">
+        </div>
+
+        <div class="">
+            <label for="Email" class='campos'> E-Mail</label>
+            <p class='gssnombre2'> {{Auth::user()->email}}  </p>
+            <hr class="hr2">
+        </div>
+
+        <div class="">
+            <label for="Direccion" class='campos'> Direccion de envio</label>
+            <p class='gssnombre2'> {{Auth::user()->adress}}</p>
+            <hr class="hr2">
+        </div>
+             
+    </div>
+
+<!-- div de ultimas compras -->     
+    <div class="gssformprofile">
+       <p class="gssFontProf2">Mis operaciones recientes</p>
+       <hr>
+     
+
+    </div>
+             
+    </div>
+
+
+   
+
+</div>
+          
+
 @endsection
+
+
+
+

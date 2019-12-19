@@ -24,6 +24,14 @@ Route::get('/FAQ', 'homeController@about');
 //Contacto
 Route::get('/contact', 'ContactFormControler@create');
 Route::post('/contact', 'ContactFormControler@store');
+//Reset Mail
+
+Route::get('password/email', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.email');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.request');
+Route::post('password/reset', 'Auth\ResetPasswordController@postReset')->name('password.reset');
+
 
 //Route::post('/contact', 'homeController@store');
 Route::get('/perfil', 'homeController@perfil') ->middleware('auth');

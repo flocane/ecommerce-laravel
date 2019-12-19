@@ -1,0 +1,26 @@
+.pssMailResetForm {
+    z-index: 15;
+    position: relative;
+    background: #fff;
+    width: 550px;
+    height: 350px;
+    border-radius: 1px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    margin: 100px auto 10px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+.pssContactForm {
+    z-index: 15;
+    position: relative;
+    background: #fff;
+    width: 550px;
+    height: 700px;
+    border-radius: 1px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    margin: 100px auto 10px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}

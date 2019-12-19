@@ -36,9 +36,9 @@
   }
 ​
 /* class pnouel 0702019 div espacio entre sections */
-.auxSpace{
-height: 60px;
-background-color: white;
+.rowHelper{
+height: 120px;
+background-color: black;
 }
 
 /* id added pnouel 0702019 */

@@ -51,7 +51,7 @@
                                         </label>                        
                                         
                                         @if (Route::has('password.request'))
-                                        <a class="gssform-recovery" href="{{ route('password.request') }}">
+                                        <a class="gssform-recovery" href="{{ route('password.email') }}">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                         @endif

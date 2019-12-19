@@ -52,7 +52,7 @@
             <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
         </div>
         <section class="row mt-5" id="titulo  faq col-md-12 col-sm-12 col-lg-8 ">
-    <p class="titulosgenerales" > <strong>Reestablecer Contraseña</strong></p>
+    <p class="titulosgenerales" > <strong>Restablecer Contraseña</strong></p>
 </section>
 
 <form class="form-horizontal" for="email" id="formulario" action="{{ route('password.email') }}" method="POST">
@@ -77,7 +77,7 @@
                     @endif
         <div class=" form-group mt-4 col-sm-12 col-md-8 col-lg-8"> <!-- Boton de Enviar-->
           <div class="col-md-12 text-center">
-           <button type="submit" class="btn btn-primary btn-lg">Reestablecer</button>
+           <button type="submit" class="btn btn-primary btn-lg">Restablecer</button>
           </div>
         </div>
     </fieldset>

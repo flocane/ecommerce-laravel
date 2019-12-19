@@ -1,36 +1,40 @@
-@extends('layouts.master')
+@extends('layouts.master');
 @section('content')
-<div class='container-fluid'>
-<article class="container-fluid carrito ">
-        <img src="{{asset("img/Logo_aurora.png")}}" alt="Logo de Aurora Materiales">
-        <div class="bar">
-            <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
-        </div>
-        <article >
-        <section class='row'>
-            @foreach($products as $product)
-            <article class="block col-2" >
-                <section class="top">
-                    <ul>
-                        <li><span class="title_product">{{$product->name}}  </span></li>
-                    </ul>
-                </section>
-                <section class="middle">
-                    <img src="{{asset('storage/'.$product->picture)}}" alt="" />
-                </section>
-                <section class="bottom2">
-                <div class="info">{{$product->name}}</div>
-                <div class="info">{{$product->description}}</div>
-                <div class="info">$  {{$product->price}}</div>
-                </section>
-                <section>
-                    <a href="{{url('carrito/add/'.$product->id)}}" class="btn btn-info"><i class="material-icons">&#xE147;</i></a>
-                </section>
-            </article>
-            @endforeach
-        </section>
-        </article>
-</article>
+    
+
+<div class="crud col-12 mb-5">
+    <table>
+        <thead>
+            <tr class="table table-hover table-condensed">
+                <th style="width:2%">#</th>
+                <th style="width:18%">Producto</th>
+                <th style="width:18%">Precio</th>
+                <th style="width:33%">Actualizado</th>
+
+                <th style="width:5%">Ver</th>
+                <th style="width:8%">Editar</th>
+                <th style="width:8%">Borrar</th>
+        </thead>
+    <tbody>
+        <tr>
+            <td data-th="Users">
+                    @foreach ($products as $product)
+                    <tr>
+                    <td>{{$product->id}}</td>
+                    <td>{{$product->nombre}}</td>
+                    <td>{{$product->precio}}</td>
+                    <td>{{$product->updated_at}}</td>
+                    
+                    <td><a href="{{('/products/show/'.$product->id)}}">  <i class="fas fa-eye icono"></i></a></td>
+                    <td><a href="{{('/products/'.$product->id.'/update')}}" class="edit"><i class="fas fa-edit icono"></i></a></td>
+                    <td><form id='{{$product->id}}' class='form-delete' action="{{url('product/'.$product->id)}}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button id='delete-link-{{$product->id}}'class="delete"><i class="fas fa-trash-alt icono"></i></button>
+                        </form></td>
+                    </tr>
+                    @endforeach
+        </tbody>
+    </table>
 </div>
 @endsection
-      

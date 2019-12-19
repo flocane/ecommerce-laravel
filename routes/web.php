@@ -42,12 +42,13 @@ Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('admin');
 // PRODUCTOS
 
 Route::get('/product', 'ProductController@index')->name('products');
+Route::get('/products/index', 'ProductController@indexAdmin')->name('products');
 Route::get('product-detail/{id}', 'ProductController@detail');
 Route::get('/products/create', 'ProductController@create')->name('products.create');
 Route::post('/products/create', 'ProductController@store');
 Route::get('/products/show','ProductController@show');
 Route::get('/products/{id}/update','ProductController@edit')->name('products.edit')->middleware('admin');
-Route::patch('/products/{id}/update', 'ProductController@update')->name('products.update');
+Route::post('/products/{id}/update', 'ProductController@update')->name('products.update');
 Route::delete('/products/{id}/', 'ProductController@destroy')->name('products.destroy');
 
 
@@ -57,7 +58,7 @@ Route::get('/add-to-cart/{id}', 'CartController@addToCart');
 Route::get('/deleteCart/{id}', 'CartController@deleteCart');
 Route::get('/checkout', 'CartController@checkout');
 // USERS|
-Route::get('/users/index', 'UserController@index')->name('users.index')-middleware('admin');
+Route::get('/users/index', 'UserController@index')->name('users.index');
 Route::get('/users/show/{id}', 'UserController@show')->name('users.show')->middleware('auth');
 Route::get('/users/{id}/edit/', 'UserController@edit')->name('user.edit')->middleware('auth');
 Route::post('/users/update/{id}', 'UserController@update');

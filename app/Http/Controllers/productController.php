@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -23,9 +22,8 @@ class productController extends Controller
     {
        $limit=30;
        $product = Product::make()->paginate($limit);
-       $category = Category::all();
-       return view('products.index')->with('products', $product)
-                                    ->with('categories',$category);
+      
+       return view('products.index')->with('products', $product);
     }
 
     /**
@@ -35,8 +33,8 @@ class productController extends Controller
      */
     public function create()
     {
-       $category = Category::all();
-       return view('products.create')->with('categories', $category);
+       
+       return view('products.create');
     }
 
     /**
@@ -92,13 +90,11 @@ class productController extends Controller
     public function edit($id)
     {
         // dd('hola');
-        $category = Category::all();
         $product = Product::find($id);
      
 
        return view('products.edit')
-           ->with('product', $product)
-           ->with('categories', $category);
+           ->with('product', $product);
     }
 
     /**
@@ -126,16 +122,14 @@ class productController extends Controller
         
         $product = Product::find($id);
         
-         $product->name = $request->input('name') !== $product->name ? $request->input('name') : $product->name;
+         $product->nombre = $request->input('nombre') !== $product->nombre ? $request->input('nombre') : $product->nombre;
          
-         $product->description = $request->input('description') !== $product->description ? $request->input('description') : $product->description;
-         $product->category_id = $request->input('category_id') !== $product->category_id ? $request->input('category_id') : $product->category_id;
-         $product->stock_id = $request->input('stock_id') !== $product->stock_id ? $request->input('stock_id') : $product->stock_id;
-         $product->price = $request->input('price') !== $product->price ? $request->input('price') : $product->price;
-         if($request->input('picture') !== $product->picture){
-             $photopath_product = $request->file('picture')->store('product_img', 'public');
+         $product->descripcion = $request->input('descripcion') !== $product->descripcion ? $request->input('descripcion') : $product->descripcion;
+         $product->precio = $request->input('precio') !== $product->precio ? $request->input('precio') : $product->precio;
+         if($request->input('imagen') !== $product->imagen){
+             $photopath_product = $request->file('imagen')->store('imagen', 'public');
          }
-         $product->picture = $request->input('picture') !== $product->picture ? $photopath_product : $product->picture;
+         $product->imagen = $request->input('imagen') !== $product->imagen ? $photopath_product : $product->imagen;
   
          $product->save();
      

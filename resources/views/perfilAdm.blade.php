@@ -63,7 +63,7 @@
         <div class="profile col-4">
             <h1>Productos</h1>
           
-            <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/index'}}">Editar Datos
+            <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/products/index'}}">Ver Productos
                 </a>
               
 

@@ -22,10 +22,10 @@
                     <tr>
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
-                    <td>{{$user->lastname}}</td>
+                    <td>{{$user->last_name}}</td>
                     <td>{{$user->email}}</td>
                     
-                    <td><a href="{{('users/show/'.$user->id)}}">  <i class="fas fa-eye icono"></i></a></td>
+                    <td><a href="{{('/users/show/'.$user->id)}}">  <i class="fas fa-eye icono"></i></a></td>
                     <td><a href="{{('/users/'.$user->id.'/edit')}}" class="edit"><i class="fas fa-edit icono"></i></a></td>
                     <td><form id='{{$user->id}}' class='form-delete' action="{{url('users/'.$user->id)}}" method="post">
                         @method('DELETE')

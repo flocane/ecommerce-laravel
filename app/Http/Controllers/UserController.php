@@ -165,6 +165,11 @@ class UserController extends Controller
         
 
     }
+    public function show($id)
+    {
+        $users = User::find($id);
+        return view('/users/show')->with('user', $users);
+    }
 
     /**
      * Remove the specified resource from storage.

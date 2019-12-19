@@ -15,8 +15,10 @@
       <div>
           @if ((Auth::User()->avatar))
           <img width="40px" style="border-radius:50%" src="{{asset('storage/avatars/'.Auth::User()->avatar)}}" alt="avatar">
-          @endif
+          @else
           <img width="40px" style="border-radius:50%" src="img/avatardefault.png" alt="avatar">
+          @endif
+          
       </div>
               <h1>Bienvenido/a:</h1>
               <br>

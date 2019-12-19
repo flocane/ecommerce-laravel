@@ -41,7 +41,7 @@ Route::get('/products/show','ProductController@show');
 Route::get('/products/{id}/update','ProductController@edit')->name('products.edit')->middleware('admin');
 Route::patch('/products/{id}/update', 'ProductController@update')->name('products.update');
 Route::delete('/products/{id}/', 'ProductController@destroy')->name('products.destroy');
-Route::post('products/search', 'ProductController@search')->name('products.search');
+
 
 //CARRITO
 Route::get('/cart', 'CartController@cart');

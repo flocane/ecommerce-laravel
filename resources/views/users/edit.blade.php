@@ -33,7 +33,7 @@
         </div>
         <div class="form-group"> <!-- Apellido -->
             <label for="apellido" class="control-label">Apellido</label>
-            <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{$user->last_name}}" required autocomplete="last_name" autofocus placeholder="Ingresar el Apellido">
+            <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{$user->last_name}}" autocomplete="last_name" autofocus placeholder="Ingresar el Apellido">
             @error('last_name')
             <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -51,7 +51,7 @@
         </div>
         <div class="form-group"> <!-- Zipcode -->
             <label for="zipcode" class="control-label">Codigo Postal</label>
-            <input id="zipcode" type="zipcode" class="form-control @error('zipcode') is-invalid @enderror" name="zipcode" value="{{$user->zipcode}}" required autocomplete="zipcode" placeholder="Ingresar el Codigo Postal">
+            <input id="zipcode" type="zipcode" class="form-control @error('zipcode') is-invalid @enderror" name="zipcode" value="{{$user->zipcode}}"  autocomplete="zipcode" placeholder="Ingresar el Codigo Postal">
             @error('zipcode')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -60,7 +60,7 @@
         </div>
         <div class="form-group"> <!-- adress -->
             <label for="adress" class="control-label">Direccion</label>
-            <input id="adress" type="adress" class="form-control @error('adress') is-invalid @enderror" name="adress" value="{{$user->adress}}" required autocomplete="adress" placeholder="Ingresa tu direccion">
+            <input id="adress" type="adress" class="form-control @error('adress') is-invalid @enderror" name="adress" value="{{$user->adress}}"  autocomplete="adress" placeholder="Ingresa tu direccion">
             @error('adress')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
         @if(auth()->user() && auth()->user()->rol == 9)
         <div class="form-group"> <!-- ROL -->
             <label for="role" class="control-label">ROL</label>
-            <input id="role" type="numer" class="form-control @error('role') is-invalid @enderror" name="role" value="{{$user->role}}" required autocomplete="Rol" placeholder="Ingresar 3 Usuarios o 9 si es Administrador">
+            <input id="role" type="numer" class="form-control @error('role') is-invalid @enderror" name="role" value="{{$user->role}}"  autocomplete="Rol" placeholder="Ingresar 3 Usuarios o 9 si es Administrador">
             @error('role')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

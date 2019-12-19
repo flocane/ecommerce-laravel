@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="gssbody" id="gss_form_gral">
+<div class="gssbody gssback" id="gss_form_gral">
     <div class="gssform">
         <div class="gssform-toggle">
         </div>
@@ -51,7 +51,7 @@
                                         </label>                        
                                         
                                         @if (Route::has('password.request'))
-                                        <a class="gssform-recovery" href="{{ route('password.request') }}">
+                                        <a class="gssform-recovery" href="{{ route('password.email') }}">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                         @endif
@@ -72,11 +72,10 @@
                 <h1>QUERES REGISTRARTE?</h1>
                 </div>
                 <div class="gssform-content">
-                    <a id ='clickAqui' class='clickAqui' href="{{ route('register') }}">Hace click aqui</a>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                    
+                    
+                     <button class='gsstransparent_btn' type="submit" id='noposeo'>Resgistrate ahora</button>
+                    
                     <div class='imagenRegister'></div>
                     <img src="img/layout/registro.png" width="300" >
                     

@@ -15,8 +15,10 @@
       <div>
           @if ((Auth::User()->avatar))
           <img width="40px" style="border-radius:50%" src="{{asset('storage/avatars/'.Auth::User()->avatar)}}" alt="avatar">
-          @endif
+          @else
           <img width="40px" style="border-radius:50%" src="img/avatardefault.png" alt="avatar">
+          @endif
+          
       </div>
               <h1>Bienvenido/a:</h1>
               <br>
@@ -39,9 +41,11 @@
               </div>
       </div>
       <div class="profile col-4">
-                <h1>Mis datos</h1>
+                <h1>Usuarios</h1>
               
-                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos
+                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/'.Auth::user()->id.'/edit/'}}">Mis Datos
+                    </a>
+                    <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/users/index'}}">Listado Usuarios
                     </a>
                   
 
@@ -56,6 +60,26 @@
                     <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
                 </div>
         </div>
+        <div class="profile col-4">
+            <h1>Productos</h1>
+          
+            <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/products/index'}}">Ver Productos
+                </a>
+                <button type="button" class="btn btn-danger"> <a class="nav-link" href="{{'/products/create'}}">Agregar Producto
+                </a>
+              
+
+                </form>
+            </button>
+            <div class="bar">
+                <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
+            </div>
+                <h2> {{Auth::user()->email}}  </h2>
+            
+            <div class="bar">
+                <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
+            </div>
+    </div>
   </body>
   
 @endsection

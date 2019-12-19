@@ -1,7 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="gssbody" id="gss_form_gral">
+<div class="gssbody gssback" id="gss_form_gral">
+
+
     <div class="gssform">
         <div class="gssform-toggle">
         </div> 
@@ -94,8 +96,8 @@
                 </div>
 
                 <div class="gssform-content">
-                    <button type="submit" id='poseo'>Ya tengo una cuenta</button>
-                    
+                    <button class='gsstransparent_btn' type="submit" id='poseo'>Ya tengo cuenta! Quiero logearme</button>
+                               
                  </div>
 
                  
@@ -103,7 +105,7 @@
             
     </div>
 
-    
+
 </div>
 
     <!-- Modal de Términos y Condiciones -->

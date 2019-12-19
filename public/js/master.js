@@ -22,6 +22,17 @@ window.addEventListener('load',function(){
     });
 
 
+    //del login al register
+
+    let noposeo=document.getElementById('noposeo');
+    this.console.log(noposeo);
+    noposeo.addEventListener('click',function(){
+            window.location.href='register';
+    })
+
+
+
+
     //VALIDACIONES PARA FORMULARIO
   let fomulario = document.querySelector('.formReg');
   let botonClickAqui = document.getElementById('clickAqui');

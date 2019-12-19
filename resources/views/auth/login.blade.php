@@ -9,7 +9,7 @@
         </div>
             <div class="gssform-panel one">
                 <div class="gssform-header"> 
-                    <h1>{{ __('Acceder') }}</h1>
+                    <h1>{{ __('Accede   ') }}</h1>
                     <H6> y se parte de la comunidad LavaBien</H6>
                 </div>
 
@@ -63,7 +63,15 @@
                                         {{ __('Login') }}
                                     </button>   
                             </div>
+
+                            <div class="gssform-group">
+                                <a class="gssform-register" href="{{ route('register') }}"> Aun no tenes cuenta? Registrate. hace click AQUI</a>
+
+                            </div>
+
                         </form>
+
+                        
                     </div>
             </div>
 

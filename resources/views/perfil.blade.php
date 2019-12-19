@@ -9,6 +9,7 @@
 <!-- div de foto - avatar -->
     <div class="gssformprofile">
        <p class="gssFontProf2">Bienvenid@</p>
+       <hr>
 
         <div class="container2">
              <div class="avatar2 backhoundIMG">
@@ -26,6 +27,8 @@
 
         <div class="gssformprofile">
         <p class="gssFontProf2">Mis Datos</p>
+        <hr>
+        <br>
 
         <div class="aline">
             <label for="Nombre y apellido" class='campos'> Nombre y Apellido</label>
@@ -50,6 +53,7 @@
 <!-- div de ultimas compras -->     
     <div class="gssformprofile">
        <p class="gssFontProf2">Mis operaciones recientes</p>
+       <hr>
      
 
     </div>

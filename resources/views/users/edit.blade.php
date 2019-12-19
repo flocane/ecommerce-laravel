@@ -20,14 +20,19 @@
     <br>
     <br>
     <div class="col-6 my-3">
+        @if ($user->rol = 9)
         <h1 class="text-center">Editar Usuario</h1>
+        @endif
         <div class="bar">
                 <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
         </div>
     <form class="" action="/users/update/{{$user->id}}" method="POST" enctype="multipart/`form-data">
       
         @csrf
+        @if ($user->rol != 9)
         <h1>Actualiza tus Datos</h1>
+        @endif
+      
         <div class="form-group"> <!-- Nombre -->
             <label for="full_name_id" class="control-label">Nombre</label>
             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$user->name}}" required autocomplete="name" autofocus placeholder="Ingresar el Nombre">

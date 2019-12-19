@@ -57,7 +57,7 @@ Route::get('/add-to-cart/{id}', 'CartController@addToCart');
 Route::get('/deleteCart/{id}', 'CartController@deleteCart');
 Route::get('/checkout', 'CartController@checkout');
 // USERS|
-Route::get('/users/index', 'UserController@index')->name('users.index');
+Route::get('/users/index', 'UserController@index')->name('users.index')-middleware('admin');
 Route::get('/users/show/{id}', 'UserController@show')->name('users.show')->middleware('auth');
 Route::get('/users/{id}/edit/', 'UserController@edit')->name('user.edit')->middleware('auth');
 Route::post('/users/update/{id}', 'UserController@update');

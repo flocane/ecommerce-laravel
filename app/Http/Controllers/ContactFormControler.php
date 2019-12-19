@@ -16,13 +16,14 @@ class ContactFormControler extends Controller
 
        //Cambiar validacion a JS
        $data = request()->validate([
-           'name'=>'required',
-           'phone'=>'required',
-           'email'=>'required',
-           'mensaje'=>'required'
+           'name'=>'required|string',
+           'phone'=>'required|numeric',
+           'email'=>'required|email',
+           'mensaje'=>'required|string'
 
        ]);
        Mail::to('dhlavaderolavabien@gmail.com')->send(new ContactformMail($data));
+       return redirect(route('contact.create'));
 
    }
 

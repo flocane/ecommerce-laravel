@@ -2,6 +2,7 @@
 @section('content')  
 
 
+
 <head>
     <!-- Add meta tags for mobile and IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +27,10 @@
 
 
 <div class="float checkout-y">
+<div class="text-center m-auto promo-y p-4">
+        <img  class="img-fluid" src="img/promo.jpg" alt="">
+        </div>
+        
         <div class="card col-md-6 table-y">
             <h2 class="tituloy"><strong>Total a pagar $ {{ $total }}</strong></h2>
 <main class="m-5 ">
@@ -42,6 +47,7 @@
     
 </main>
         </div>
+        
 </div>
 
 

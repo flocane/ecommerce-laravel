@@ -56,7 +56,7 @@ class CartController extends Controller
 
         $total = 0;
         foreach ($cart as $item => $value) {
-            $total += $value['product']->precio * $value['quantity'];
+            $total = $value['product']->precio * $value['quantity'];
         }
 
         return view('checkout')->with('total', $total);

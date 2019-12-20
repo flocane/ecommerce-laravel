@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('content')
+<div class="gsprofile fotoPerfilgral">
+
+
 <div class='fader'>
 @if(count($errors) > 0)
 <div class="alert alert-danger">
@@ -46,6 +49,7 @@
             <a href="{{url('perfilAdm')}}"><button type="button" class="btn btn-info"><-Volver</button></a>
         </div>
     </form>
+    </div>
 </div>
 </div>
 @endsection

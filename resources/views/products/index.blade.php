@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
     
-
+<div class="gsprofile fotoPerfilgral">
 <div class="crud col-12 mb-5">
     <table>
         <thead>
@@ -36,5 +36,6 @@
                     @endforeach
         </tbody>
     </table>
+</div>
 </div>
 @endsection

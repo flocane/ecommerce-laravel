@@ -36,12 +36,15 @@
                 <h4><a id="login" class="nav-link text-white-50 font-weight-bold pr-5" href="{{route('login')}}">Ingresar</a></h4>
             </li>
             <li class="nav-link">
-                <h4><a class="nav-link text-white-50 font-weight-bold" href={{asset("cart")}}>Carrito<i  class="fas fa-shopping-cart ml-3"></i></a></h4>
+                <h4><a class="nav-link text-white-50 font-weight-bold" href={{asset('cart')}}>Carrito<i  class="fas fa-shopping-cart ml-3"></i></a></h4>
             </li>
 
 @else
     <li class="nav-link">
         <h4><a class="nav-link text-white-50 font-weight-bold" href="{{url("perfil")}}">{{Auth::User()->name}}</a></h4>
+    </li>
+    <li class="nav-link">
+        <h4><a class="nav-link text-white-50 font-weight-bold" href={{asset('cart')}}>Carrito<i  class="fas fa-shopping-cart ml-3"></i></a></h4>
     </li>
     @if (auth()->user()->rol == 9)
         <li class="nav-link">

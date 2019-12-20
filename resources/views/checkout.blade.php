@@ -25,10 +25,10 @@
 </head> 
 
 
-<div class="row justify-content-center  checkout-y m-5" >
+<div class="float checkout-y">
         <div class="card col-md-6">
-            <h3>Total a pagar $</h3>
-<main class="m-5">
+            <h2 class="tituloy"><strong>Total a pagar $</strong></h2>
+<main class="m-5 ">
     <!-- Set up a container element for the button -->
     <div id="paypal-button-container"></div>
 

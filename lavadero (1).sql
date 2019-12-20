@@ -18,31 +18,37 @@ USE `lavadero`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `carritos`
+-- Table structure for table `carts`
 --
 
-DROP TABLE IF EXISTS `carritos`;
+DROP TABLE IF EXISTS `carts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `carritos` (
+CREATE TABLE `carts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `compra_id` int(11) DEFAULT NULL,
-  `precio_final` float DEFAULT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` float DEFAULT NULL,
+  `cart_number` bigint(20) DEFAULT NULL,
+  `image` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cant` int(11) NOT NULL,
+  `status` smallint(6) NOT NULL,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `description` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `delete_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `compra_id` (`compra_id`),
-  CONSTRAINT `carritos_ibfk_1` FOREIGN KEY (`compra_id`) REFERENCES `compras` (`id`)
+  KEY `compra_id` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `carritos`
+-- Dumping data for table `carts`
 --
 
-LOCK TABLES `carritos` WRITE;
-/*!40000 ALTER TABLE `carritos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `carritos` ENABLE KEYS */;
+LOCK TABLES `carts` WRITE;
+/*!40000 ALTER TABLE `carts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -61,8 +67,8 @@ CREATE TABLE `compras` (
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `carrito_id` (`carrito_id`),
-  CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `compras_ibfk_2` FOREIGN KEY (`carrito_id`) REFERENCES `carritos` (`id`)
+  CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`),
+  CONSTRAINT `compras_ibfk_2` FOREIGN KEY (`carrito_id`) REFERENCES `cart` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -73,6 +79,82 @@ CREATE TABLE `compras` (
 LOCK TABLES `compras` WRITE;
 /*!40000 ALTER TABLE `compras` DISABLE KEYS */;
 /*!40000 ALTER TABLE `compras` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+LOCK TABLES `password_resets` WRITE;
+/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -122,7 +204,7 @@ CREATE TABLE `products_cart` (
   KEY `producto_id` (`producto_id`),
   KEY `carrito_id` (`carrito_id`),
   CONSTRAINT `products_cart_ibfk_1` FOREIGN KEY (`producto_id`) REFERENCES `products` (`id`),
-  CONSTRAINT `products_cart_ibfk_2` FOREIGN KEY (`carrito_id`) REFERENCES `carritos` (`id`)
+  CONSTRAINT `products_cart_ibfk_2` FOREIGN KEY (`carrito_id`) REFERENCES `cart` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -143,6 +225,42 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `adress` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `zipcode` int(11) DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `avatar` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `rol` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Fran','locane','Arregui 6074',1408,'locane.francisco@gmail.com',NULL,NULL,'$2y$10$sS9OKM9crpH.ygkfdkiZVOGdlCgK1Mhw7/73iUrZa.DUgzt3f0xAW',NULL,'2019-12-17 22:44:57','2019-12-17 23:13:47',9),(2,'yohana',NULL,NULL,NULL,'yoha@yoha.com',NULL,NULL,'$2y$10$0n1vtAuhagojnOckpcR1xOkHjWN8n/U12QFcY2.lTSlAQzupFrJq6',NULL,'2019-12-20 01:51:48','2019-12-20 01:51:48',NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -155,17 +273,17 @@ CREATE TABLE `users` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `usuarios`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Yohana','Orona','Yoha','yohana@gmail.com','123456',NULL,NULL,'2019-11-13 18:36:58','2019-11-13 18:36:58'),(4,'Carla','Baracus','cbaracus','cbaracus@queti.com','$2y$10$Zt4Vkwgmcn6u/tltAamjhepvwPRB8uIwf/Tl7P8Xa74yVVq/TsJqu',NULL,NULL,'2019-11-15 02:33:02','2019-11-15 02:33:02'),(5,'Maria','Mora','Mari','maria@gmai.com','$2y$10$ICDGip6FFa1bl1QUgf7zD.D2TtFKUOIJn5PLo96CgDNUdj1F54VDq',NULL,NULL,'2019-11-15 18:28:55','2019-11-15 18:28:55'),(6,'fran',NULL,NULL,'locane.francisco@gmail.com','$2y$10$CrzDeN7JyqqrUd/dNHSlMu0vhBKyIiNJPGKmBr/72thjal3n9tGw6',NULL,'9','2019-12-10 01:36:07','2019-12-10 01:36:07'),(7,'yohana',NULL,NULL,'yoha@yoha.com','$2y$10$.5LzI6TI7ugBF1RwiuKluuhunPofsqbbbB.eJ3PWA5MNwKRfEz9pW',NULL,NULL,'2019-12-13 04:27:22','2019-12-13 04:27:22');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'Yohana','Orona','Yoha','yohana@gmail.com','123456',NULL,NULL,'2019-11-13 18:36:58','2019-11-13 18:36:58'),(4,'Carla','Baracus','cbaracus','cbaracus@queti.com','$2y$10$Zt4Vkwgmcn6u/tltAamjhepvwPRB8uIwf/Tl7P8Xa74yVVq/TsJqu',NULL,NULL,'2019-11-15 02:33:02','2019-11-15 02:33:02'),(5,'Maria','Mora','Mari','maria@gmai.com','$2y$10$ICDGip6FFa1bl1QUgf7zD.D2TtFKUOIJn5PLo96CgDNUdj1F54VDq',NULL,NULL,'2019-11-15 18:28:55','2019-11-15 18:28:55'),(6,'fran',NULL,NULL,'locane.francisco@gmail.com','$2y$10$CrzDeN7JyqqrUd/dNHSlMu0vhBKyIiNJPGKmBr/72thjal3n9tGw6',NULL,'9','2019-12-10 01:36:07','2019-12-10 01:36:07'),(7,'yohana',NULL,NULL,'yoha@yoha.com','$2y$10$.5LzI6TI7ugBF1RwiuKluuhunPofsqbbbB.eJ3PWA5MNwKRfEz9pW',NULL,NULL,'2019-12-13 04:27:22','2019-12-13 04:27:22'),(8,'fran',NULL,NULL,'fran@gmail.com','$2y$10$AVx4LC9gh5ZqJZBQefSDjOrMtCwXB461xi.ilaMhGkDXgGpPrAxd.',NULL,NULL,'2019-12-17 21:40:11','2019-12-17 21:40:11'),(9,'snake',NULL,NULL,'snake@hotmail.com','$2y$10$duxxtxqJiNnfkIqoXX5lCuRdKlXYkpVD2ZzieBOS3/fT88x2hpQHa',NULL,NULL,'2019-12-17 22:06:14','2019-12-17 22:06:14');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -177,4 +295,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-17 11:07:07
+-- Dump completed on 2019-12-20 14:37:04

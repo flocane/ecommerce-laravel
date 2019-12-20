@@ -25,3 +25,22 @@
     border-bottom: groove;
     background-color: rgb(249, 149, 120);
 }
+.cart-y{
+    background-image: url(../img/fondocart.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding:100px;
+}
+
+.checkout-y{
+    background-image: url(../img/checkout3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding:100px;
+}
+
+.card{
+    background-color:rgb(252, 249, 249,.6);
+}

@@ -53,10 +53,14 @@ Route::delete('/products/{id}/', 'ProductController@destroy')->name('products.de
 
 
 //CARRITO
-Route::get('/cart', 'CartController@cart');
+Route::get('/cart', 'CartController@cart')->middleware('auth');
 Route::get('/add-to-cart/{id}', 'CartController@addToCart');
 Route::get('/deleteCart/{id}', 'CartController@deleteCart');
 Route::get('/checkout', 'CartController@checkout');
+Route::post('/cartclose', 'CartController@cartclose');
+Route::get('/history', 'CartController@history')->middleware('auth');
+
+
 // USERS|
 Route::get('/users/index', 'UserController@index')->name('users.index');
 Route::get('/users/show/{id}', 'UserController@show')->name('users.show')->middleware('auth');

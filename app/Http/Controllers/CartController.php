@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Cart;
 
 class CartController extends Controller
 {
@@ -53,4 +54,53 @@ class CartController extends Controller
         return view('checkout');
 
     }
+
+    //Este método muestra todos los productos del carrito del usuario logueado
+    public function index()
+    {
+      $cart = Cart::where("user_id", Auth::user()->id)->where("status",0)->get();
+      return view('cart', compact('cart'));
+    }
+    //Este corresponde al que permite agregar al carrito
+    public function store(Request $request)
+    {
+        $product = Product::find($request->id);
+        //Esto lo hago la lograr generar un numero de carrito de forma dinámica
+        $val = new Cart;
+        $val->nombre = $product->nombre;
+        $val->descripcion = $product->descripcion;
+        $val->precio = $product->precio;
+        $val->imagen = $product->featured_img;
+        $val->quantity = 1;
+        $val->user_id = Auth::user()->id;
+
+        //Este lo cree para controlar si el producto fue comprado (1) o aun no ha sido producto no comprado (0).
+        $val->status = 0;
+        //Aquí guardo en la tabla de cart (carrito)
+        $val->save();
+        return redirect('home');
+    }
+    //Aquí traigo todos los productos del carrito del usuario logueado y que ha seleccionado una vez que decide cerrar la compra.
+    public function cartclose(Request $req){
+        $vals = Cart::where("user_id", Auth::user()->id)->where("status",0)->get();
+      //De esta forma genero el número del carrito para el usuario que está comprando
+      $cart_number = Cart::max('cart_number') +1;
+      foreach($vals as $val){
+        $val->status = 1;
+        $val->cart_number = $cart_number;
+        $val->save();
+      }
+      return redirect('home');
+    }
+    //Con este método controlo todo lo que el usuario historicamente ha comprado
+    public function history(){
+      $carts = Cart::where('user_id', Auth::user()->id)
+                    ->where("status",1)->get()
+                    ->groupBy('cart_number');
+                    //De esta forma controlo todos los nros de carrito del usuario.
+      return view('history', compact('carts'));
+    }
+ 
+
+
 };

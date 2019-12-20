@@ -2,8 +2,8 @@
 @section('content')
 
 
-<div class="container mt-5 mb-1">
-    <h2 class="tituloy pb-5"><strong> Carrito de compras </strong></i></h2>
+<div class="float cart-y">
+    <h2 class=" pb-5"><strong> Carrito de compras </strong></i></h2>
 
     <div class="row justify-content-center">
         <div class="card col-md-8">
@@ -72,7 +72,10 @@
             </table>
 
             <div>
+            <form class="" action="/cartclose" method="post">
+              @csrf
                 <a href="{{ url('checkout/')}}"><button type="button" class="btn btn-outline-success mb-5">Elegir medio de pago</button></a>
+                </form>
             </div>
             @endif
         </div>

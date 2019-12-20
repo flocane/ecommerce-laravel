@@ -26,7 +26,7 @@
 
 
 <div class="float checkout-y">
-        <div class="card col-md-6">
+        <div class="card col-md-6 table-y">
             <h2 class="tituloy"><strong>Total a pagar $ {{ $total }}</strong></h2>
 <main class="m-5 ">
     <!-- Set up a container element for the button -->

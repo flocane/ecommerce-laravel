@@ -41,6 +41,12 @@
     padding:100px;
 }
 
-.card{
-    background-color:rgb(252, 249, 249,.6);
+.table-y{
+    background-color:rgb(252, 249, 249,.7);
+    align-self: center;
+}
+
+a.btn-y{
+    padding: 5px 5px;
+    
 }

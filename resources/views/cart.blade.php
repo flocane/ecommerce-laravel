@@ -2,14 +2,14 @@
 @section('content')
 
 
-<div class="float cart-y">
+<div class="float cart-y ">
     <h2 class=" pb-5"><strong> Carrito de compras </strong></i></h2>
 
-    <div class="row justify-content-center">
-        <div class="card col-md-8">
+    <div class="row justify-content-center m-auto">
+        <div class="card m-1 col-xl-12 col-lg-12 col-md-10 table-y">
 
             @if(count($cart))
-            <table class="table table-hover">
+            <table class="table responsive">
                 <thead class="theady">
                     <tr>
                         <th></th>
@@ -44,13 +44,13 @@
                         $ {{ $val['product']->precio}}
                     </th>
                     <th>
-                        <a href="{{ url('minusQuantity/'.$val['product']->id)}}" class="btn btn-outline-primary">
+                        <a href="{{ url('minusQuantity/'.$val['product']->id)}}" class=" btn-y btn btn-outline-primary">
                             <i class="fas fa-minus"></i>  
                         </a>
 
                         {{ $val['quantity']}}
 
-                        <a href="{{ url('moreQuantity/'.$val['product']->id)}}" class="btn btn-outline-primary">
+                        <a href="{{ url('moreQuantity/'.$val['product']->id)}}" class=" btn-y btn btn-outline-primary">
                             <i class="fas fa-plus"></i>
                         </a>
                     </th>
@@ -59,7 +59,7 @@
                         <?php $valor +=  $val['product']->precio * $val['quantity'] ?>
                     </th>
                     <th>
-                        <a href="{{ url('deleteCart/'.$val['product']->id)}}" class="btn btn-outline-danger">
+                        <a href="{{ url('deleteCart/'.$val['product']->id)}}" class=" btn-y btn btn-outline-danger">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </th>

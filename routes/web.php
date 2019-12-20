@@ -55,8 +55,10 @@ Route::delete('/products/{id}/', 'ProductController@destroy')->name('products.de
 //CARRITO
 Route::get('/cart', 'CartController@cart')->middleware('auth');
 Route::get('/add-to-cart/{id}', 'CartController@addToCart');
+Route::get('/minusQuantity/{id}', 'CartController@minusQuantity');
+Route::get('/moreQuantity/{id}', 'CartController@moreQuantity');
 Route::get('/deleteCart/{id}', 'CartController@deleteCart');
-Route::get('/checkout', 'CartController@checkout');
+Route::get('/checkout', 'CartController@checkout')->middleware('auth');
 Route::post('/cartclose', 'CartController@cartclose');
 Route::get('/history', 'CartController@history')->middleware('auth');
 

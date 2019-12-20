@@ -152,12 +152,14 @@ class UserController extends Controller
 
         // A partir de aca hay que fijarse que todo funcione...
         //guardar la foto
+if ($request->file('avatar')) {
 
-        $nombreArchivo = 'avatar.png';
+    $nombreArchivo = 'avatar.png';
         $imagen = $request->file('avatar');
         $nombreArchivo = uniqid('img-') . '.' .$imagen->extension();
         $imagen->storePubliclyAs("public/avatar", $nombreArchivo);
        
+}
         
         $this->validate($request, $rules, $messages);
 
@@ -167,11 +169,7 @@ class UserController extends Controller
 
         $users->email = $request->input('email') !== $users->email ? $request->input('email') : $users->email;
        
-        /* 
-        esto lo comento porque la pass capaz la pass la cambiamos con el auth 
-        $users->password = $request->input('category_id') !== $users->category_id ? $request->input('category_id') : $users->category_id;
-        */
-        
+     
         $users->avatar =  $nombreArchivo !== $users->avatar ?  $nombreArchivo : $users->avatar;
        
         $users->last_name = $request->input('last_name') !== $users->last_name ? $request->input('last_name') : $users->last_name;

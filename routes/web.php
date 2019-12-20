@@ -42,14 +42,14 @@ Route::get('/perfilAdm', 'homeController@perfilAdm')->middleware('admin');
 // PRODUCTOS
 
 Route::get('/product', 'ProductController@index')->name('products');
-Route::get('/products/index', 'ProductController@indexAdmin')->name('products');
+Route::get('/products/index', 'ProductController@indexAdmin')->name('products')->middleware('admin');
 Route::get('product-detail/{id}', 'ProductController@detail');
-Route::get('/products/create', 'ProductController@create')->name('products.create');
+Route::get('/products/create', 'ProductController@create')->name('products.create')->middleware('admin') ;
 Route::post('/products/create', 'ProductController@store');
 Route::get('/products/show','ProductController@show');
 Route::get('/products/{id}/update','ProductController@edit')->name('products.edit')->middleware('admin');
-Route::post('/products/{id}/update', 'ProductController@update')->name('products.update');
-Route::delete('/products/{id}/', 'ProductController@destroy')->name('products.destroy');
+Route::post('/products/{id}/update', 'ProductController@update')->name('products.update')->middleware('admin');
+Route::delete('/products/{id}/', 'ProductController@destroy')->name('products.destroy')->middleware('admin');
 
 
 //CARRITO

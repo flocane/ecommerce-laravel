@@ -19,7 +19,7 @@
             </div>
 
         <p class='gssnombre'>{{Auth::user()->name}} {{Auth::user()->lastname}}</p>
-       <button type="button" class='btn btn-outline-secondary boton'> <a href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos</a>
+       <button type="button" class='botonSubmit'> <a href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos</a>
 
     </div>
 
@@ -56,10 +56,9 @@
     <div class="gssformprofile">
        <p class="gssFontProf2">Mis operaciones recientes</p>
        <hr>
-     
-
-    </div>
-             
+        
+       <p class="tamgss">Sector en construccion: Proximamente veras aqui tus ultimas operaciones</p>
+   
     </div>
 
 

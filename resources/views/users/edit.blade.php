@@ -18,14 +18,14 @@
     @endif
 
     <br>
-    <div class="col-6 my-3">
+    <div class="">
         @if ($user->rol = 9)
         <h3 class="text-center">Editar mis datos</h3>
         @endif
         <div class="bar">
                 <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
         </div>
-    <form class="" action="/users/update/{{$user->id}}" method="POST" enctype="multipart/form-data">
+    <form class="formDatosEditPerf" action="/users/update/{{$user->id}}" method="POST" enctype="multipart/form-data">
       
         @csrf
         @if ($user->rol != 9)
@@ -79,10 +79,15 @@
             @enderror
         </div>
 
+
+        
         <div class="Gssupload-btn-wrapper"> <!-- avatar -->
         <label for="adress" class="control-label">Foto de perfil</label>
-            <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" required>
+            <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
         </div>   
+
+        <br>
+        <br>
 
         @if(auth()->user() && auth()->user()->rol == 9)
         <div class="form-group"> <!-- ROL -->

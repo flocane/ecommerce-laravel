@@ -14,13 +14,13 @@
 <br>
 <br>
 <br>
-<div class="carrito col-6">
+<div class="carrito ">
     <h1 class="text-center">Agregar Nuevo Producto</h1>
 
     <div class="bar">
             <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
     </div>
-    <form class="form-group" action="" method="post" enctype="multipart/form-data">
+    <form class="formDatosEditPerf" action="" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="nombre">Nombre</label>

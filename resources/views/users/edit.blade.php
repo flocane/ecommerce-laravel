@@ -29,7 +29,7 @@
       
         @csrf
         @if ($user->rol != 9)
-        <h1>Actualiza tus Datos</h1>
+        <h3>Actualiza tus Datos</h3>
         @endif
       
         

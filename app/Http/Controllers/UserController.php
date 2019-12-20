@@ -13,12 +13,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() //guardo todos los usuarios y me los llevo a la vista index
+    public function index()
     {
-        $users = User::all();
-        return view('users.index')->with('users',$users);
+        $users=User::paginate(5);
+        return view('/users/index')->with('users', $users);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -158,9 +157,18 @@ class UserController extends Controller
         $users->zipcode = $request->input('zipcode') !== $users->zipcode ? $request->input('zipcode') : $users->zipcode;
 
         $users->save();
+        if(auth()->user()->rol == 9){
+            return redirect('/users/index');
+        }else{
+            return redirect("/perfil/"); 
+        }
         
-        return redirect("/perfil/");
 
+    }
+    public function show($id)
+    {
+        $users = User::find($id);
+        return view('/users/show')->with('user', $users);
     }
 
     /**

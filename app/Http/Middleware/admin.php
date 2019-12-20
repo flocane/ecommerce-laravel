@@ -15,7 +15,7 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->role != 9) {
+        if(auth()->user()->rol != 9) {
             return redirect('/home');
         }
         return $next($request);

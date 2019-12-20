@@ -13,9 +13,10 @@
 
         <div class="container2">
              <div class="avatar2 backhoundIMG">
-             <p>{{Auth::user()->avatar}}</p>
+
+             <img src="/storage/avatar/{{Auth::user()->avatar}}"style="width:100%;" >
              
-        </div>
+            </div>
 
         <p class='gssnombre'>{{Auth::user()->name}} {{Auth::user()->lastname}}</p>
        <button type="button" class='btn btn-outline-secondary boton'> <a href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos</a>

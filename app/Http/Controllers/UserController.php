@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 
 class UserController extends Controller
 {
+
+/*avatar*/
+     
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users=User::paginate(5);
+        $users = User::paginate(5);
         return view('/users/index')->with('users', $users);
     }
     /**
@@ -23,15 +28,27 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        // 
-    }
+
+    //  /*valido imagen*/
+    // protected function validator (Request $request) {
+    //  return Validator::make($data, [
+    //     'avatar' => ['required', 'image']
+    //  ]);
+    // }
+
+
+    // public function create(Request $request)
+    // {
+    //     $nombreArchivo = 'user_default.jpg';
+    //     $request = request();
+    //     dd($request);
+    //     ;
+    // }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) //funcion para que el admin cree un usuario
@@ -51,7 +68,7 @@ class UserController extends Controller
 
         $this->validate($request, $reglas, $mensajes);
 
-        $avatar = $request->file('avatar')->store('avatar', 'public');
+        $avatar = $request->file('avatar')->store('public','app','storage');
         
         $user = new User($request->all());
 
@@ -115,13 +132,12 @@ class UserController extends Controller
        
       
          $users->zipcode = $request->input('zipcode') !== $users->zipcode ? $request->input('zipcode') : $users->zipcode;
-
          $users->save();
 
          return redirect("/perfil/");
     }
     public function update(Request $request, $id)
-    {
+    {   
         $rules = [
             'name' => 'required',
             'email' => 'required',
@@ -134,6 +150,15 @@ class UserController extends Controller
             'required' => 'el campo :attribute es obligatorio',
         ];
 
+        // A partir de aca hay que fijarse que todo funcione...
+        //guardar la foto
+
+        $nombreArchivo = 'avatar.png';
+        $imagen = $request->file('avatar');
+        $nombreArchivo = uniqid('img-') . '.' .$imagen->extension();
+        $imagen->storePubliclyAs("public/avatar", $nombreArchivo);
+       
+        
         $this->validate($request, $rules, $messages);
 
         $users = User::find($id);
@@ -147,7 +172,7 @@ class UserController extends Controller
         $users->password = $request->input('category_id') !== $users->category_id ? $request->input('category_id') : $users->category_id;
         */
         
-        $users->avatar = $request->input('avatar') !== $users->avatar ? $request->input('avatar') : $users->avatar;
+        $users->avatar =  $nombreArchivo !== $users->avatar ?  $nombreArchivo : $users->avatar;
        
         $users->last_name = $request->input('last_name') !== $users->last_name ? $request->input('last_name') : $users->last_name;
         

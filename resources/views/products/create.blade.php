@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+<div class="gsprofile fotoPerfilgral">
 <div class='fader'>
 @if(count($errors) > 0)
 <div class="alert alert-danger">
@@ -43,6 +44,7 @@
             <input type="submit" class="btn btn-primary" value="Agregar Producto" id="addProduct">
         </div>
     </form>
+</div>
 </div>
 </div>
 @endsection

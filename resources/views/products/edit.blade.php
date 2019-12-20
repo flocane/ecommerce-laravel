@@ -22,7 +22,7 @@
     <div class="bar">
             <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
     </div>
-<form class='form-group' method="POST" action="/products/{{$product->id}}/update" enctype="multipart/form-data" >
+<form class='formDatosEditPerf' method="POST" action="/products/{{$product->id}}/update" enctype="multipart/form-data" >
             
             @csrf
         
@@ -32,7 +32,7 @@
         </div>
         <div class="form-group">
             <label for="description">Descripcion</label>
-            <input type="text" name="descripcion" value="{{$product->descripcion}}" class="form-control">
+            <input type="text" name="descripcion" value="{{$product->descripcion}}" class="form-control ">
         </div>
         
         <div class="form-group">
@@ -45,8 +45,8 @@
             <input class="form-control" type="file" name="imagen">
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Editar Producto" id="editProduct">
-            <a href="{{url('perfilAdm')}}"><button type="button" class="btn btn-info"><-Volver</button></a>
+            <input type="submit" class="btn btn-primary botonSubmit" value="Editar Producto" id="editProduct">
+            <a href="{{url('perfilAdm')}}"><button type="button" class="btn btn-info botonSubmit"><-Volver</button></a>
         </div>
     </form>
     </div>

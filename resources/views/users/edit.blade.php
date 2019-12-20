@@ -21,7 +21,7 @@
     <br>
     <div class="col-6 my-3">
         @if ($user->rol = 9)
-        <h1 class="text-center">Editar Usuario</h1>
+        <h2 class="text-center">Actualizar mis datos</h2>
         @endif
         <div class="bar">
                 <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
@@ -30,12 +30,11 @@
       
         @csrf
         @if ($user->rol != 9)
-        <h1>Actualiza tus Datos</h1>
+        <h1>Actualizar tus Datos</h1>
         @endif
       
-        <div class="form-group"> <!-- avatar -->
-                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" required>
-        </div>   
+        
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 
         <div class="form-group"> <!-- Nombre -->
             <label for="full_name_id" class="control-label">Nombre</label>
@@ -96,12 +95,18 @@
         <div class="bar">
                 <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
         </div>
-        <button type="submit" class="btn btn-danger"> Actualizar </button>
+
+        <div class="form-group"> <!-- avatar -->
+                <div class="file-select-button" id="fileName">Subi tu foto</div>
+                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" required autofocus placeholder="Ingresar el Apellido">
+        </div> 
+
+        <button type="submit" class="btn btn-outline-secondary"> Actualizar </button>
         @if (auth()->user()->rol == 9)
-        <a href="{{'/users/index'}}"><button type="button" class="btn btn-primary"><-Volver</button></a>
+        <a href="{{'/users/index'}}"><button type="button" class="botonEditGS btn btn-outline-secondary"><-Volver</button></a>
            
        @else
-       <a href="{{url('perfil')}}"><button type="button" class="btn btn-primary"><-Volver</button></a>
+       <a href="{{url('perfil')}}"><button type="button" class="botonEditGS btn btn-outline-secondary"><-Volver</button></a>
        @endif
         
         </form>

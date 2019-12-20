@@ -20,9 +20,13 @@
                 </div>
                 <h4 class="nombreProd">{{$product->nombre}}</h4>
                 <p class="precio">Precio: <em class="precio">{{$product->precio}}</em> </p>
-                <div class= "mb-5"> 
-                    <button class="botonSubmit"><a href="{{ url('product-detail/'.$product->id)}}">Servicio</a></button>
-                    <button class="botonSubmit"><a href="{{ url('add-to-cart/'.$product->id)}}"> Agregar</a></button>
+                <div class="row mb-5">
+                    <form class="col" action="{{ url('product-detail/'.$product->id)}}">
+                        <input type="submit" class="botonSubmit" value="Servicio"></button>
+                    </form>
+                    <form class="col" action="{{ url('add-to-cart/'.$product->id)}}">
+                        <input type="submit" class="botonSubmit" value="Agregar"></button>
+                    </form>
                 </div>
 
             </div>

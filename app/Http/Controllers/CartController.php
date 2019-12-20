@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Product;
 use App\Cart;
 
@@ -39,7 +40,7 @@ class CartController extends Controller
         }
 
         session()->put('cart', $cart);
-        return redirect()->back();
+        return view('cart')->with('cart', $cart);
     }
 
     //Eliminar productos de carrito
@@ -47,11 +48,18 @@ class CartController extends Controller
         $cart = session()->get('cart');
         unset($cart[$id]);
         session()->put('cart', $cart);
-        return redirect()->back()->with('cart', $cart);
+        return view('cart')->with('cart', $cart);
     }
 
     public function checkout(){
-        return view('checkout');
+        $cart = session()->get('cart');
+
+        $total = 0;
+        foreach ($cart as $item => $value) {
+            $total += $value['product']->precio * $value['quantity'];
+        }
+
+        return view('checkout')->with('total', $total);
 
     }
 
@@ -80,6 +88,8 @@ class CartController extends Controller
         $val->save();
         return redirect('home');
     }
+
+    
     //Aquí traigo todos los productos del carrito del usuario logueado y que ha seleccionado una vez que decide cerrar la compra.
     public function cartclose(Request $req){
         $vals = Cart::where("user_id", Auth::user()->id)->where("status",0)->get();
@@ -101,6 +111,30 @@ class CartController extends Controller
       return view('history', compact('carts'));
     }
  
+    public function minusQuantity($id) {
+        $cart = session()->get('cart');
 
+        if (isset($cart[$id])) {
+            //verifica si este producto existe y luego decrementa cuantitativamente
+            $quantity = $cart[$id]['quantity'];
+            if ($quantity > 1) {
+                $cart[$id]['quantity']--;
+            }
+        }
+        
+        session()->put('cart', $cart);
+        return view('cart')->with('cart', $cart);
+    }
 
+    public function moreQuantity($id) {
+        $cart = session()->get('cart');
+
+        if (isset($cart[$id])) {
+            //verifica si este producto existe y luego incrementa cuantitativamente
+            $cart[$id]['quantity']++;
+        }
+        
+        session()->put('cart', $cart);
+        return view('cart')->with('cart', $cart);
+    }
 };

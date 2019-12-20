@@ -44,7 +44,15 @@
                         $ {{ $val['product']->precio}}
                     </th>
                     <th>
+                        <a href="{{ url('minusQuantity/'.$val['product']->id)}}" class="btn btn-outline-primary">
+                            <i class="fas fa-minus"></i>  
+                        </a>
+
                         {{ $val['quantity']}}
+
+                        <a href="{{ url('moreQuantity/'.$val['product']->id)}}" class="btn btn-outline-primary">
+                            <i class="fas fa-plus"></i>
+                        </a>
                     </th>
                     <th>
                         $ {{ $val['product']->precio * $val['quantity'] }}

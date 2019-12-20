@@ -18,12 +18,7 @@
         </div>
 
         <p class='gssnombre'>{{Auth::user()->name}} {{Auth::user()->lastname}}</p>
-<<<<<<< .merge_file_jggL2Y
        <button type="button" class='btn btn-outline-secondary boton'> <a href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos</a>
-=======
-        <button type = 'submit' class='btn btn-outline-secondary boton'>actualizar mi foto de perfil</button>
-        <button type="button" class='btn btn-outline-secondary boton'> <a href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos</a>
->>>>>>> .merge_file_Mx89BF
 
     </div>
 

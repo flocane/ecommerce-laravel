@@ -1,6 +1,4 @@
-<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-
-@extends('layouts.master');
+@extends('layouts.master')
 
 @section('content')  
 

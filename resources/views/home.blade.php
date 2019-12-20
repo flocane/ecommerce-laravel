@@ -1,5 +1,5 @@
-@extends('layouts.master');
-@section('content');
+@extends('layouts.master')
+@section('content')
 <body>
     <div class="tm-container mx-auto">
         <section class="tm-section tm-section-1">

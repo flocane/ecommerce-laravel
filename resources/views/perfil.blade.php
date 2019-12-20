@@ -13,11 +13,12 @@
 
         <div class="container2">
              <div class="avatar2 backhoundIMG">
+             <p>{{Auth::user()->avatar}}</p>
+             
         </div>
 
         <p class='gssnombre'>{{Auth::user()->name}} {{Auth::user()->lastname}}</p>
-        <button class='btn btn-outline-secondary boton'>actualizar mi foto de perfil</button>
-        <button type="button" class='btn btn-outline-secondary boton'> <a href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos</a>
+       <button type="button" class='btn btn-outline-secondary boton'> <a href="{{'/users/'.Auth::user()->id.'/edit/'}}">Editar Datos</a>
 
     </div>
 

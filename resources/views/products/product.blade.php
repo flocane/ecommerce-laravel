@@ -30,7 +30,7 @@
 
             </div>
         @endforeach
-
+        {{ $productos->links() }}
     </div>
     </div>
  </main>

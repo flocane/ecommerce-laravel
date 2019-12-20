@@ -1,100 +1,3 @@
-/* .profile {
-    position: inline-block;
-    padding: 15px;
-    margin: 30px 65px 10px 65px;
-    width: 20%;
-    min-width: 300px;
-    max-width: 600px;
-    text-align: center;
-    background: #F4F2F4;
-    border-radius: 2px;
-  }
-  .profile:hover img {
-    transform: rotate(-3deg);
-  }
-  .profile:hover .bar span {
-    opacity: 1;
-  }
-  .profile img {
-    width: 100px;
-    border-radius: 90px;
-    margin-bottom: 28px;
-    box-shadow: 0 8px 6px -6px #555;
-    transition: transform 1s;
-  }
-  .profile .bar span {
-    width: 20%;
-    opacity: 0.5;
-    display: inline-block;
-    height: 5px;
-    padding: 0;
-    margin: 15px 0;
-    transition: opacity 1s;
-  }
-  .profile .bar span.one {
-    background-color: #5C96BC;
-  }
-  .profile .bar span.two {
-    background-color: #42E31B;
-  }
-  .profile .bar span.three {
-    background-color: #FEDE16;
-  }
-  .profile .bar span.four {
-    background-color: #E66504;
-  }
-  .profile .bar span.five {
-    background-color: #C60600;
-  }
-  .profile h1, .profile h2 {
-    color: #333;
-    text-rendering: optimizeLegibility;
-  }
-  .profile h1 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 24px;
-    line-height: 26px;
-  }
-  .profile h2 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 20px;
-    line-height: 22px;
-  }
-
-
-
-.color{
-  background-color: red;
-}
-
-
-.gssbodyprofile {
-  background: linear-gradient(70deg, rgba(245, 245, 245, 0.4) 0%, rgba(255,255,255,0.4) 50%);
-  color: rgba(78, 74, 74, 0.6);
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  line-height: 1.6em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-.gssbody {
-    
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  line-height: 1.6em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.gssback{
-  background-image: url("../img/back1.jpg");
-  background-repeat: no-repeat;
-  width: 100%;
-  background-position: center;
-  background-size: contain;
-  } */
 
 
 .gssformprofile {
@@ -304,4 +207,29 @@ text-align: center;
   font-size: 15px;
   }
 
+
+  .Gssupload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
  
+
+  .gssupload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+
+.gssbtn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}

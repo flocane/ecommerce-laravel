@@ -16,12 +16,11 @@
         </ul>
     </div>
     @endif
-    <br>
-    <br>
+
     <br>
     <div class="col-6 my-3">
         @if ($user->rol = 9)
-        <h2 class="text-center">Actualizar mis datos</h2>
+        <h3 class="text-center">Editar mis datos</h3>
         @endif
         <div class="bar">
                 <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
@@ -30,12 +29,10 @@
       
         @csrf
         @if ($user->rol != 9)
-        <h1>Actualizar tus Datos</h1>
+        <h1>Actualiza tus Datos</h1>
         @endif
       
         
-        <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-
         <div class="form-group"> <!-- Nombre -->
             <label for="full_name_id" class="control-label">Nombre</label>
             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$user->name}}" required autocomplete="name" autofocus placeholder="Ingresar el Nombre">
@@ -81,6 +78,12 @@
                 </span>
             @enderror
         </div>
+
+        <div class="Gssupload-btn-wrapper"> <!-- avatar -->
+        <label for="adress" class="control-label">Foto de perfil</label>
+            <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" required>
+        </div>   
+
         @if(auth()->user() && auth()->user()->rol == 9)
         <div class="form-group"> <!-- ROL -->
             <label for="role" class="control-label">ROL</label>
@@ -95,18 +98,12 @@
         <div class="bar">
                 <span class="one"></span><span class="two"></span><span class="three"></span><span class="four"></span><span class="five"></span>
         </div>
-
-        <div class="form-group"> <!-- avatar -->
-                <div class="file-select-button" id="fileName">Subi tu foto</div>
-                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" required autofocus placeholder="Ingresar el Apellido">
-        </div> 
-
-        <button type="submit" class="btn btn-outline-secondary"> Actualizar </button>
+        <button type="submit" class="botonSubmit"> Actualizar </button>
         @if (auth()->user()->rol == 9)
-        <a href="{{'/users/index'}}"><button type="button" class="botonEditGS btn btn-outline-secondary"><-Volver</button></a>
+        <a href="{{'/users/index'}}"><button type="button" class="botonSubmit"><-Volver</button></a>
            
        @else
-       <a href="{{url('perfil')}}"><button type="button" class="botonEditGS btn btn-outline-secondary"><-Volver</button></a>
+       <a href="{{url('perfil')}}"><button type="button" class="botonSubmit"><-Volver</button></a>
        @endif
         
         </form>
